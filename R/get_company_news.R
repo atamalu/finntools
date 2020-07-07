@@ -23,7 +23,7 @@
 #' @importFrom stringr str_split
 #' @export
 
-finn_get_company_news <- function(symbol, api.key,
+get_company_news <- function(symbol, api.key,
                                   start.date = NA, end.date = NA,
                                   last.n.days = 180, translate.date = TRUE,
                                   write.file = TRUE){
