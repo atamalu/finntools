@@ -24,11 +24,11 @@ get_reported_financials(
 a data frame of reported financial information for the specified company
 }
 \description{
-`get_basic_financials` retrieves financial data through a company's filings
+`get_reported_financials` retrieves financial data through a company's filings
 }
 \examples{
 \donttest{
 ### Get financial report data for Apple
-get_reported_financials(symbol = "AAPL", api.key = api.key, frequency = c("annual", "price"))
+get_reported_financials(symbol = "AAPL", api.key = api.key, frequency = c("annual", "quarterly"))
 }
 }

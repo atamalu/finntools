@@ -1,6 +1,6 @@
 #' @title retrieve reported financial data
 #'
-#' @description `get_basic_financials` retrieves financial data through a company's filings
+#' @description `get_reported_financials` retrieves financial data through a company's filings
 #'
 #' @param symbol the stock symbol to retrieve data for
 #' @param api.key your API token from finnhub.io
@@ -10,7 +10,7 @@
 #' @examples
 #' \donttest{
 #' ### Get financial report data for Apple
-#' get_reported_financials(symbol = "AAPL", api.key = api.key, frequency = c("annual", "price"))
+#' get_reported_financials(symbol = "AAPL", api.key = api.key, frequency = c("annual", "quarterly"))
 #' }
 #' @importFrom jsonlite fromJSON
 #' @importFrom data.table rbindlist

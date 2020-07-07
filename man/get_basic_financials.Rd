@@ -25,6 +25,7 @@ a data frame of basic financial information for the specified company
 \donttest{
 ### Get basic financial price data for Apple
 ### options: 'all', 'price', 'valuation', 'margin'
-get_basic_financials(symbol = "AAPL", api.key = api.key, metric.type = "price")
+get_basic_financials(symbol = "AAPL", api.key = api.key,
+metric.type = c("all", "price", "valuation", "margin"))
 }
 }

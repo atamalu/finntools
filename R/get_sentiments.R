@@ -29,4 +29,3 @@ get_sentiments <- function(symbol, api.key, write.file = TRUE){
 
   return(df)
 }
-
