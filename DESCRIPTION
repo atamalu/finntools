@@ -1,7 +1,7 @@
 Package: finntools
 Type: Package
 Title: Functions to Retrieve Formatted Data from Finnhub.io
-Version: 0.1.0
+Version: 0.2.0
 Author: Andrew Tamalunas
 Maintainer: Andrew Tamalunas <atamalu@g.clemson.edu>
 Description: This package includes wrappers for retrieving and writing data from Finnhub.io.

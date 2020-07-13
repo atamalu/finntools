@@ -22,7 +22,12 @@ Finnhub.io offers a wide range of financial data at a price that the average inv
 * `get_sentiments` sentimental analyses of recent articles about a company
 * `get_basic_financials` basic financial information about a company
 * `get_reported_financials` financial information reported by a company through filings
+* `get_company_filings` filings by a company
+* `get_recommendation_trends` recommendation trends for a given company
+* `get_company_peers` stocks with the same country and GICS sub-industry as the specified symbol
 
+* `get_market_news` latest articles for overall market
+* `get_ipo_calendar` ipo calendar for overall market
 ## Installation
 ```{r, eval = FALSE}
 ### Install from Github
@@ -137,4 +142,131 @@ To get annual reported financial data for Apple, we would enter:
 get_reported_financials(symbol = "AAPL", 
                      api.key = api.key, 
                      frequency = "annual")
+```
+
+### get_company_filings
+
+`get_company_filings` retrieves filings for a specified company or identifier
+
+<BR>
+<BR>
+<details>
+  <summary>Parameters (expand)</summary>
+`symbol` the stock symbol to retrieve company news for <BR>
+`cik` the central index key to retrieve company filings for <BR>
+`access.number` the access number to retrieve company filings for <BR>
+`form` filter by type of filing form <BR>
+`api.key` your API token from finnhub.io <BR>
+`last.n.days` the range of days to get data for when start and end dates are NA (default) <BR>
+`start.date` the earliest date to get news for (YYYY-MM-DD) <BR>
+`end.date` the latest date to get news for (YYYY-MM-DD) <BR>
+`write.file` declares whether data should be written to .csv file
+</details>
+
+#### Example
+
+If we wanted filings for Apple between the beginning of January 2020 and the end of March 2020, we'd do
+
+```{r, eval = FALSE}
+get_company_filings(symbol = "AAPL", 
+                    api.key = api.key,
+                    start.date = '2020-01-01', 
+                    end.date = '2020-03-31')
+```
+
+### get_recommendation_trends
+
+`get_recommendation_trends` retrieves recommendation trends for a given company
+
+<BR>
+<BR>
+<details>
+  <summary>Parameters (expand)</summary>
+`symbol` the stock symbol to retrieve company news for <BR>
+`api.key` your API token from finnhub.io <BR>
+`write.file` declares whether data should be written to .csv file
+</details>
+
+#### Example
+
+If we wanted recommendation trends for Apple, we'd type
+
+```{r, eval = FALSE}
+get_recommendation_trends(symbol = "AAPL", 
+                          api.key = api.key)
+```
+
+### get_company_peers
+
+`get_company_peers` retrieves a data frame of stocks with the same country and GICS sub-industry as the specified symbol
+
+<BR>
+<BR>
+<details>
+  <summary>Parameters (expand)</summary>
+`symbol` the stock symbol to retrieve company news for <BR>
+`api.key` your API token from finnhub.io <BR>
+`write.file` declares whether data should be written to .csv file
+</details>
+
+#### Example
+
+If we wanted to find companies that are similar to Apple, we'd use
+
+```{r, eval = FALSE}
+get_company_peers(symbol = "AAPL", 
+                  api.key = api.key)
+```
+
+### get_market_news
+
+`get_market_news` retrieves latest news for a market in a given category
+<BR>
+<BR>
+<details>
+  <summary>Parameters (expand)</summary>
+`category` the category of news to retrieve <BR>
+* options include: "general", "forex", "crypto", "merger" <BR>
+`api.key` your API token from finnhub.io <BR>
+`minid` only get news after a specific id <BR>
+`translate.date` declares whether UNIX time should be converted to standard date-time format <BR>
+`write.file` declares whether data should be written to .csv file
+</details>
+
+#### Example
+
+To get the latest market news on mergers, we'd enter
+
+```{r, eval = FALSE}
+get_market_news(category = "merger",
+                api.key = api.key)
+```
+
+### get_ipo_calendar
+
+`get_ipo_calendar` retrieves information on ipo's for a given time period
+<BR>
+<BR>
+<details>
+  <summary>Parameters (expand)</summary>
+`api.key` your API token from finnhub.io <BR>
+`last.n.days` the range of days to get data for <BR>
+* ignore if using start.date and end.date <BR>
+`start.date`the earliest date to get news for (YYYY-MM-DD) <BR>
+`end.date` the latest date to get news for (YYYY-MM-DD) <BR>
+`write.file` declares whether data should be written to .csv file
+</details>
+
+#### Example
+
+Let's say we want to get ipo's from the last 30 days
+
+```{r, eval = FALSE}
+get_ipo_calendar(api.key = api.key, last.n.days = 30)
+```
+
+Or we may want to get information on ipo's from March of 2020
+
+```{r, eval = FALSE}
+get_ipo_calendar(api.key = api.key, start.date = '2020-03-01', end.date = '2020-03-31')
 ```
