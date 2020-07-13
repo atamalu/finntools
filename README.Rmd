@@ -24,7 +24,9 @@ Finnhub.io offers a wide range of financial data at a price that the average inv
 * `get_reported_financials` financial information reported by a company through filings
 * `get_company_filings` filings by a company
 * `get_recommendation_trends` recommendation trends for a given company
-* `get_company_peers` stocks with the same country and GICS sub-industry as the specified symbol
+* `get_company_peers` stocks with the same country and GICS sub-industry as the specified company
+* `get_target_price` the latest price target consensus for a given company
+* `get_earnings_surprise` company historical quarterly earnings surprise dating back to 2000
 
 * `get_market_news` latest articles for overall market
 * `get_ipo_calendar` ipo calendar for overall market
@@ -216,6 +218,52 @@ If we wanted to find companies that are similar to Apple, we'd use
 ```{r, eval = FALSE}
 get_company_peers(symbol = "AAPL", 
                   api.key = api.key)
+```
+
+### get_target_price
+
+`get_target_price` retrieves the latest price target consensus for a given stock symbol
+
+<BR>
+<BR>
+<details>
+  <summary>Parameters (expand)</summary>
+`symbol` the stock symbol to retrieve company news for <BR>
+`api.key` your API token from finnhub.io <BR>
+`write.file` declares whether data should be written to .csv file
+</details>
+
+#### Example
+
+Let's say that we want to get target prices for Apple
+
+```{r, eval = FALSE}
+get_target_price(symbol = 'AAPL',
+                 api.key = api.key)
+```
+
+### get_earnings_surprise
+
+`get_earnings_surprise` retrieves company historical quarterly earnings surprise dating back to 2000
+
+<BR>
+<BR>
+<details>
+  <summary>Parameters (expand)</summary>
+`symbol` the stock symbol to retrieve company news for <BR>
+`api.key` your API token from finnhub.io <BR>
+`num.periods` the number of periods to get data for; leave blank to get full history <BR>
+`write.file` declares whether data should be written to .csv file
+</details>
+
+#### Example
+
+Let's say that we want to get earnings surprises for Apple from the 4 most recent periods
+
+```{r, eval = FALSE}
+get_earnings_surprise(symbol = 'AAPL', 
+                      num.periods = 4, 
+                      api.key = api.key)
 ```
 
 ### get_market_news
