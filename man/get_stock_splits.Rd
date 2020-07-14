@@ -4,7 +4,7 @@
 \alias{get_stock_splits}
 \title{retrieve stock splits}
 \usage{
-get_stock_splits(symbol, from.date, to.date, api.key, write.file = TRUE)
+get_stock_splits(symbol, from.date, to.date, api.key, write.file = FALSE)
 }
 \arguments{
 \item{symbol}{the stock symbol to retrieve data for}

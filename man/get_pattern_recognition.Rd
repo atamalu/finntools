@@ -4,7 +4,7 @@
 \alias{get_pattern_recognition}
 \title{run pattern recognition on a symbol}
 \usage{
-get_pattern_recognition(symbol, resolution, api.key, write.file = TRUE)
+get_pattern_recognition(symbol, resolution, api.key, write.file = FALSE)
 }
 \arguments{
 \item{symbol}{the stock symbol to retrieve data for}

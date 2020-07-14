@@ -9,7 +9,7 @@ get_market_news(
   api.key,
   minid = 0,
   translate.date = TRUE,
-  write.file = TRUE
+  write.file = FALSE
 )
 }
 \arguments{

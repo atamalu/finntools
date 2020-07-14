@@ -11,7 +11,7 @@ get_company_news(
   end.date = NA,
   last.n.days = 180,
   translate.date = TRUE,
-  write.file = TRUE
+  write.file = FALSE
 )
 }
 \arguments{

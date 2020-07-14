@@ -26,7 +26,7 @@
 get_company_news <- function(symbol, api.key,
                                   start.date = NA, end.date = NA,
                                   last.n.days = 180, translate.date = TRUE,
-                                  write.file = TRUE){
+                                  write.file = FALSE){
 
   ### auto-adjust date params
   if(is.na(start.date) == TRUE | is.na(end.date) == TRUE){

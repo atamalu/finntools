@@ -4,7 +4,7 @@
 \alias{get_quote}
 \title{retrieve real-time stock data}
 \usage{
-get_quote(symbol, api.key, translate.date = TRUE, write.file = TRUE)
+get_quote(symbol, api.key, translate.date = TRUE, write.file = FALSE)
 }
 \arguments{
 \item{symbol}{the stock symbol to retrieve data for}

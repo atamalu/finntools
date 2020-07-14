@@ -29,7 +29,7 @@
 get_stock_candles <- function(symbol, resolution, from.date, to.date, api.key,
                               format = 'csv', adjusted = FALSE,
                               translate.input.dates = TRUE, translate.date = TRUE,
-                              write.file = TRUE){
+                              write.file = FALSE){
 
   ### adjust?
   if(adjusted == FALSE){

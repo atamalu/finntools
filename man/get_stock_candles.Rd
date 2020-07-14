@@ -14,7 +14,7 @@ get_stock_candles(
   adjusted = FALSE,
   translate.input.dates = TRUE,
   translate.date = TRUE,
-  write.file = TRUE
+  write.file = FALSE
 )
 }
 \arguments{

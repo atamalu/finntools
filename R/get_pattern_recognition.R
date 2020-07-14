@@ -15,7 +15,7 @@
 #' @importFrom jsonlite fromJSON
 #' @export
 
-get_pattern_recognition <- function(symbol, resolution, api.key, write.file = TRUE){
+get_pattern_recognition <- function(symbol, resolution, api.key, write.file = FALSE){
 
   resolution = as.character(resolution)
 

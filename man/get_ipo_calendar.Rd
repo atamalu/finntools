@@ -9,7 +9,7 @@ get_ipo_calendar(
   last.n.days = 180,
   start.date = NA,
   end.date = NA,
-  write.file = TRUE
+  write.file = FALSE
 )
 }
 \arguments{

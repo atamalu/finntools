@@ -15,7 +15,7 @@
 #' @importFrom dplyr select
 #' @export
 
-get_target_price <- function(symbol, api.key, write.file = TRUE){
+get_target_price <- function(symbol, api.key, write.file = FALSE){
 
   ### retrieve & remove duplicates
   pg.url <- sprintf('https://finnhub.io/api/v1/stock/price-target?symbol=%s&token=%s', symbol, api.key)

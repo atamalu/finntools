@@ -17,7 +17,7 @@
 #' @importFrom jsonlite fromJSON
 #' @export
 
-get_market_news <- function(category, api.key, minid = 0, translate.date = TRUE, write.file = TRUE){
+get_market_news <- function(category, api.key, minid = 0, translate.date = TRUE, write.file = FALSE){
   category <- tolower(category)
   supported.categories <- c('general', 'forex', 'crypto', 'merger')
 

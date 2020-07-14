@@ -15,7 +15,7 @@
 #' @importFrom rlist list.flatten
 #' @export
 
-get_sentiments <- function(symbol, api.key, write.file = TRUE){
+get_sentiments <- function(symbol, api.key, write.file = FALSE){
   pg.url <- sprintf('https://finnhub.io/api/v1/news-sentiment?symbol=%s&token=%s', symbol, api.key)
 
   df <- fromJSON(pg.url)

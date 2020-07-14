@@ -14,7 +14,7 @@
 #' @importFrom jsonlite fromJSON
 #' @export
 
-get_company_peers <- function(symbol, api.key, write.file = TRUE){
+get_company_peers <- function(symbol, api.key, write.file = FALSE){
 
   ### retrieve & remove duplicates
   pg.url <- sprintf('https://finnhub.io/api/v1/stock/peers?symbol=%s&token=%s', symbol, api.key)

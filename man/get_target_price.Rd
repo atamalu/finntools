@@ -4,7 +4,7 @@
 \alias{get_target_price}
 \title{retrieve latest price target consensus}
 \usage{
-get_target_price(symbol, api.key, write.file = TRUE)
+get_target_price(symbol, api.key, write.file = FALSE)
 }
 \arguments{
 \item{symbol}{the stock symbol to retrieve data for}

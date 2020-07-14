@@ -8,7 +8,7 @@ get_reported_financials(
   symbol,
   api.key,
   frequency = "annual",
-  write.file = TRUE
+  write.file = FALSE
 )
 }
 \arguments{

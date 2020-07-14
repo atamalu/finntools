@@ -4,7 +4,7 @@
 \alias{get_supported_stocks}
 \title{retrieve stock tickers supported by Finnhub}
 \usage{
-get_supported_stocks(exchange, api.key, write.file = TRUE)
+get_supported_stocks(exchange, api.key, write.file = FALSE)
 }
 \arguments{
 \item{exchange}{the exchange to get list of symbols from}

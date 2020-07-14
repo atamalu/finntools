@@ -14,7 +14,7 @@
 #' @importFrom jsonlite fromJSON
 #' @export
 
-get_recommendation_trends <- function(symbol, api.key, write.file = TRUE){
+get_recommendation_trends <- function(symbol, api.key, write.file = FALSE){
   ### get data
   pg.url <- sprintf('https://finnhub.io/api/v1/stock/recommendation?symbol=%s&token=%s', symbol, api.key)
   df <- fromJSON(pg.url)

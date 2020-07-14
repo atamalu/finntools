@@ -15,7 +15,7 @@
 #' @importFrom jsonlite fromJSON
 #' @export
 
-get_quote <- function(symbol, api.key, translate.date = TRUE, write.file = TRUE){
+get_quote <- function(symbol, api.key, translate.date = TRUE, write.file = FALSE){
 
   ### retrieve & remove duplicates
   pg.url <- sprintf('https://finnhub.io/api/v1/quote?symbol=%s&token=%s', symbol, api.key)

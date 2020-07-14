@@ -16,7 +16,7 @@
 #' @importFrom data.table rbindlist
 #' @export
 
-get_reported_financials <- function(symbol, api.key, frequency = 'annual', write.file = TRUE){
+get_reported_financials <- function(symbol, api.key, frequency = 'annual', write.file = FALSE){
   pg.url <- sprintf('https://finnhub.io/api/v1/stock/financials-reported?symbol=%s&freq=%s&token=%s', symbol, frequency, api.key)
 
   df <- fromJSON(pg.url, flatten = TRUE)

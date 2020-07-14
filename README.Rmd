@@ -36,6 +36,7 @@ Finnhub.io offers a wide range of financial data at a price that the average inv
 * `get_ipo_calendar` ipo calendar for overall market
 
 ## Installation
+
 ```{r, eval = FALSE}
 ### Install from Github
 require(devtools)

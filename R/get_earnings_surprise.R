@@ -15,7 +15,7 @@
 #' @importFrom jsonlite fromJSON
 #' @export
 
-get_earnings_surprise <- function(symbol, api.key, num.periods = 4, write.file = TRUE){
+get_earnings_surprise <- function(symbol, api.key, num.periods = 4, write.file = FALSE){
 
   ### retrieve & remove duplicates
   pg.url <- sprintf('https://finnhub.io/api/v1/stock/earnings?symbol=%s&limit=%d&token=%s', symbol, num.periods, api.key)

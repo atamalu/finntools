@@ -4,7 +4,7 @@
 \alias{get_basic_financials}
 \title{retrieve basic financial data}
 \usage{
-get_basic_financials(symbol, api.key, metric.type = "all", write.file = TRUE)
+get_basic_financials(symbol, api.key, metric.type = "all", write.file = FALSE)
 }
 \arguments{
 \item{symbol}{the stock symbol to retrieve data for}

@@ -4,7 +4,7 @@
 \alias{get_sentiments}
 \title{retrieve sentiment analyses for a company}
 \usage{
-get_sentiments(symbol, api.key, write.file = TRUE)
+get_sentiments(symbol, api.key, write.file = FALSE)
 }
 \arguments{
 \item{symbol}{the stock symbol to retrieve sentiment analyses for}

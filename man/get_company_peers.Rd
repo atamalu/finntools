@@ -4,7 +4,7 @@
 \alias{get_company_peers}
 \title{retrieve stock tickers supported by Finnhub}
 \usage{
-get_company_peers(symbol, api.key, write.file = TRUE)
+get_company_peers(symbol, api.key, write.file = FALSE)
 }
 \arguments{
 \item{symbol}{the stock symbol to retrieve data for}

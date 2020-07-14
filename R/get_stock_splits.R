@@ -20,7 +20,7 @@
 #' @importFrom jsonlite fromJSON
 #' @export
 
-get_stock_splits <- function(symbol, from.date, to.date, api.key, write.file = TRUE){
+get_stock_splits <- function(symbol, from.date, to.date, api.key, write.file = FALSE){
 
   ### retrieve & remove duplicates
   pg.url <- sprintf('https://finnhub.io/api/v1/stock/split?symbol=%s&from=%s&to=%s&token=%s', symbol, from.date, to.date, api.key)

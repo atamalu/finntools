@@ -18,7 +18,7 @@
 #' @importFrom rlist list.clean
 #' @export
 
-get_basic_financials <- function(symbol, api.key, metric.type = 'all', write.file = TRUE){
+get_basic_financials <- function(symbol, api.key, metric.type = 'all', write.file = FALSE){
   ### get data
   pg.url <- sprintf('https://finnhub.io/api/v1/stock/metric?symbol=%s&metric=%s&token=%s', symbol, metric.type, api.key)
   df <- fromJSON(pg.url)

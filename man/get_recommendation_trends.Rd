@@ -4,7 +4,7 @@
 \alias{get_recommendation_trends}
 \title{retrieve recommendation trends}
 \usage{
-get_recommendation_trends(symbol, api.key, write.file = TRUE)
+get_recommendation_trends(symbol, api.key, write.file = FALSE)
 }
 \arguments{
 \item{symbol}{the stock symbol to retrieve data for}

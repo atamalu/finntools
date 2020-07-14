@@ -14,7 +14,7 @@
 #' @importFrom jsonlite fromJSON
 #' @export
 
-get_supported_stocks <- function(exchange, api.key, write.file = TRUE){
+get_supported_stocks <- function(exchange, api.key, write.file = FALSE){
 
   ### retrieve & remove duplicates
   pg.url <- sprintf('https://finnhub.io/api/v1/stock/symbol?exchange=%s&token=%s', exchange, api.key)

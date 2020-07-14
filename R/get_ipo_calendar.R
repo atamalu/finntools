@@ -19,7 +19,7 @@
 #' @importFrom jsonlite fromJSON
 #' @export
 
-get_ipo_calendar <- function(api.key, last.n.days = 180, start.date = NA, end.date = NA, write.file = TRUE){
+get_ipo_calendar <- function(api.key, last.n.days = 180, start.date = NA, end.date = NA, write.file = FALSE){
 
   if(is.na(start.date) == TRUE | is.na(end.date) == TRUE){
     end.date = Sys.Date(); start.date = end.date - last.n.days

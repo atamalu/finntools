@@ -25,7 +25,7 @@ get_company_filings <- function(symbol = '', cik = '', access.number = '', form 
                              api.key,
                              last.n.days = 180,
                              start.date = NA, end.date = NA,
-                             write.file = TRUE){
+                             write.file = FALSE){
 
   if(nchar(symbol) == 0 & nchar(cik) == 0 & nchar(access.number) == 0){
     ret <- print('Please enter a symbol, cik, or access number.')

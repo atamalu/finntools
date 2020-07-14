@@ -4,7 +4,7 @@
 \alias{get_earnings_surprise}
 \title{retrieve historical quarterly earnings surprise}
 \usage{
-get_earnings_surprise(symbol, api.key, num.periods = 4, write.file = TRUE)
+get_earnings_surprise(symbol, api.key, num.periods = 4, write.file = FALSE)
 }
 \arguments{
 \item{symbol}{the stock symbol to retrieve data for}
