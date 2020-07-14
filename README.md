@@ -55,6 +55,10 @@ require(devtools)
 devtools::install_github('atamalu/finntools')
 ```
 
+``` r
+library(finntools)
+```
+
 Functions
 ---------
 
@@ -64,22 +68,262 @@ Functions
 
 #### Example
 
-Let’s say we want to get the last 30 days of news for Apple.
+Let’s say we want to get the last 30 days of news for Apple
 
 ``` r
 get_company_news(symbol = 'AAPL', 
                  api.key = api.key,
-                 last.n.days = 30)
+                 last.n.days = 30) %>%
+  head() %>%
+  kable()
+#> [1] "Retrieving last 30 days of news for AAPL"
+#> [1] "172 unique articles successfully retrieved."
 ```
 
-Or we may want to get the last 30 days of news for Apple.
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+date
+</th>
+<th style="text-align:left;">
+headline
+</th>
+<th style="text-align:left;">
+source
+</th>
+<th style="text-align:left;">
+url
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+2020-07-14
+</td>
+<td style="text-align:left;">
+Dow Jones Futures Rise On Moderna Coronavirus Vaccine News After Stock
+Market Rally, Apple, Tesla Rise, UnitedHealth, Goldman, ASML Earnings On
+Tap
+</td>
+<td style="text-align:left;">
+Yahoo
+</td>
+<td style="text-align:left;">
+<a href="https://finance.yahoo.com/m/1895c7b8-d2b5-32c2-9057-856442438c38/dow-jones-futures-rise-on.html" class="uri">https://finance.yahoo.com/m/1895c7b8-d2b5-32c2-9057-856442438c38/dow-jones-futures-rise-on.html</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+2020-07-14
+</td>
+<td style="text-align:left;">
+iPhone 12 might come with braided Lightning-to-USB-C cable
+</td>
+<td style="text-align:left;">
+<a href="https://www.cultofmac.com" class="uri">https://www.cultofmac.com</a>
+</td>
+<td style="text-align:left;">
+<a href="https://www.cultofmac.com/717233/iphone-12-braided-lightning-to-usb-c-cable-rumor/" class="uri">https://www.cultofmac.com/717233/iphone-12-braided-lightning-to-usb-c-cable-rumor/</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+2020-07-14
+</td>
+<td style="text-align:left;">
+NBC’s video service Peacock stresses ‘free,’ looks to 2021
+</td>
+<td style="text-align:left;">
+abcnews
+</td>
+<td style="text-align:left;">
+<a href="https://abcnews.go.com/Business/wireStory/nbcs-video-service-peacock-stresses-free-2021-71784553" class="uri">https://abcnews.go.com/Business/wireStory/nbcs-video-service-peacock-stresses-free-2021-71784553</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+2020-07-14
+</td>
+<td style="text-align:left;">
+Can’t schedule Dark Mode or Night Shift on iPhone and iPad? Here’s a fix
+</td>
+<td style="text-align:left;">
+<a href="https://www.cultofmac.com" class="uri">https://www.cultofmac.com</a>
+</td>
+<td style="text-align:left;">
+<a href="https://www.cultofmac.com/717221/schedule-dark-mode-night-shift-iphone-ipad-fix/" class="uri">https://www.cultofmac.com/717221/schedule-dark-mode-night-shift-iphone-ipad-fix/</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:left;">
+2020-07-14
+</td>
+<td style="text-align:left;">
+GLOBAL MARKETS-Stocks rebound on cyclical surge, gold edges higher
+</td>
+<td style="text-align:left;">
+Yahoo
+</td>
+<td style="text-align:left;">
+<a href="https://finance.yahoo.com/news/global-markets-stocks-rebound-cyclical-202127650.html" class="uri">https://finance.yahoo.com/news/global-markets-stocks-rebound-cyclical-202127650.html</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:left;">
+2020-07-14
+</td>
+<td style="text-align:left;">
+Google Promises the EU It Won’t Use Fitbit Health Data to Target Ads
+</td>
+<td style="text-align:left;">
+barrons
+</td>
+<td style="text-align:left;">
+<a href="https://www.barrons.com/articles/google-promises-the-eu-it-wont-use-fitbit-health-data-to-target-ads-51594755518" class="uri">https://www.barrons.com/articles/google-promises-the-eu-it-wont-use-fitbit-health-data-to-target-ads-51594755518</a>
+</td>
+</tr>
+</tbody>
+</table>
+
+Or we may want to get news for Apple from March of 2020
 
 ``` r
 get_company_news(symbol = 'AAPL', 
                  api.key = api.key,
                  start.date = '2020-03-01', 
-                 end.date = '2020-03-30')
+                 end.date = '2020-03-30') %>%
+  head() %>%
+  kable()
+#> [1] "Retrieving news for AAPL between 2020-03-01 and 2020-03-30"
+#> [1] "157 unique articles successfully retrieved."
 ```
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+date
+</th>
+<th style="text-align:left;">
+headline
+</th>
+<th style="text-align:left;">
+source
+</th>
+<th style="text-align:left;">
+url
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+2020-03-30
+</td>
+<td style="text-align:left;">
+The iPhone buying conundrum: Outlook hazy
+</td>
+<td style="text-align:left;">
+<a href="https://www.macworld.com" class="uri">https://www.macworld.com</a>
+</td>
+<td style="text-align:left;">
+<a href="https://www.macworld.com/article/3535170/the-iphone-buying-conundrum-outlook-hazy.html" class="uri">https://www.macworld.com/article/3535170/the-iphone-buying-conundrum-outlook-hazy.html</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020-03-30
+</td>
+<td style="text-align:left;">
+MacBook Air (2020) review: More bang for your buck
+</td>
+<td style="text-align:left;">
+<a href="https://www.macworld.com" class="uri">https://www.macworld.com</a>
+</td>
+<td style="text-align:left;">
+<a href="https://www.macworld.com/article/3535129/macbook-air-2020-review.html" class="uri">https://www.macworld.com/article/3535129/macbook-air-2020-review.html</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020-03-30
+</td>
+<td style="text-align:left;">
+Apple acquires Dark Sky weather app
+</td>
+<td style="text-align:left;">
+<a href="https://www.macworld.com" class="uri">https://www.macworld.com</a>
+</td>
+<td style="text-align:left;">
+<a href="https://www.macworld.com/article/3535217/apple-acquires-dark-sky-weather-app.html" class="uri">https://www.macworld.com/article/3535217/apple-acquires-dark-sky-weather-app.html</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020-03-30
+</td>
+<td style="text-align:left;">
+Stocks Rally On March 30, But Caution Is Still Needed
+</td>
+<td style="text-align:left;">
+investing
+</td>
+<td style="text-align:left;">
+<a href="https://www.investing.com/analysis/stocks-rally-on-march-30-but-caution-is-still-needed-200520034" class="uri">https://www.investing.com/analysis/stocks-rally-on-march-30-but-caution-is-still-needed-200520034</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020-03-30
+</td>
+<td style="text-align:left;">
+Drive innovation if you want to survive
+</td>
+<td style="text-align:left;">
+<a href="https://www.raconteur.net" class="uri">https://www.raconteur.net</a>
+</td>
+<td style="text-align:left;">
+<a href="https://www.raconteur.net/business-innovation/drive-innovation-optimisation" class="uri">https://www.raconteur.net/business-innovation/drive-innovation-optimisation</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020-03-30
+</td>
+<td style="text-align:left;">
+Sennheiser Momentum True Wireless 2 Earbuds Review \| Digital Trends
+</td>
+<td style="text-align:left;">
+<a href="https://www.digitaltrends.com" class="uri">https://www.digitaltrends.com</a>
+</td>
+<td style="text-align:left;">
+<a href="https://www.digitaltrends.com/headphone-reviews/sennheiser-momentum-true-wireless-2-review/" class="uri">https://www.digitaltrends.com/headphone-reviews/sennheiser-momentum-true-wireless-2-review/</a>
+</td>
+</tr>
+</tbody>
+</table>
 
 Note: the API limits the number of results, which could be an issue for
 larger companies.
@@ -95,8 +339,75 @@ If we wanted to get sentiment analyses for Apple, we would use
 
 ``` r
 get_sentiments(symbol = "AAPL",
-               api.key = api.key)
+               api.key = api.key) %>%
+  head() %>%
+  kable()
 ```
+
+<table>
+<thead>
+<tr>
+<th style="text-align:right;">
+buzz.articlesInLastWeek
+</th>
+<th style="text-align:right;">
+buzz.buzz
+</th>
+<th style="text-align:right;">
+buzz.weeklyAverage
+</th>
+<th style="text-align:right;">
+companyNewsScore
+</th>
+<th style="text-align:right;">
+sectorAverageBullishPercent
+</th>
+<th style="text-align:right;">
+sectorAverageNewsScore
+</th>
+<th style="text-align:right;">
+sentiment.bearishPercent
+</th>
+<th style="text-align:right;">
+sentiment.bullishPercent
+</th>
+<th style="text-align:left;">
+symbol
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+234
+</td>
+<td style="text-align:right;">
+0.8327
+</td>
+<td style="text-align:right;">
+281
+</td>
+<td style="text-align:right;">
+0.8421
+</td>
+<td style="text-align:right;">
+0.6646
+</td>
+<td style="text-align:right;">
+0.5236
+</td>
+<td style="text-align:right;">
+0.1112
+</td>
+<td style="text-align:right;">
+0.8888
+</td>
+<td style="text-align:left;">
+AAPL
+</td>
+</tr>
+</tbody>
+</table>
 
 ### get\_basic\_financials
 
@@ -110,8 +421,141 @@ To get basic financial price data for Apple, we would enter:
 ``` r
 get_basic_financials(symbol = "AAPL", 
                      api.key = api.key, 
-                     metric.type = "price")
+                     metric.type = "price") %>%
+  head() %>%
+  kable()
 ```
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+symbol
+</th>
+<th style="text-align:right;">
+X10DayAverageTradingVolume
+</th>
+<th style="text-align:right;">
+X13WeekPriceReturnDaily
+</th>
+<th style="text-align:right;">
+X26WeekPriceReturnDaily
+</th>
+<th style="text-align:right;">
+X3MonthAverageTradingVolume
+</th>
+<th style="text-align:right;">
+X52WeekHigh
+</th>
+<th style="text-align:left;">
+X52WeekHighDate
+</th>
+<th style="text-align:right;">
+X52WeekLow
+</th>
+<th style="text-align:left;">
+X52WeekLowDate
+</th>
+<th style="text-align:right;">
+X52WeekPriceReturnDaily
+</th>
+<th style="text-align:right;">
+X5DayPriceReturnDaily
+</th>
+<th style="text-align:right;">
+beta
+</th>
+<th style="text-align:right;">
+marketCapitalization
+</th>
+<th style="text-align:right;">
+monthToDatePriceReturnDaily
+</th>
+<th style="text-align:right;">
+priceRelativeToS.P50013Week
+</th>
+<th style="text-align:right;">
+priceRelativeToS.P50026Week
+</th>
+<th style="text-align:right;">
+priceRelativeToS.P5004Week
+</th>
+<th style="text-align:right;">
+priceRelativeToS.P50052Week
+</th>
+<th style="text-align:right;">
+priceRelativeToS.P500Ytd
+</th>
+<th style="text-align:right;">
+yearToDatePriceReturnDaily
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+AAPL
+</td>
+<td style="text-align:right;">
+31.28423
+</td>
+<td style="text-align:right;">
+39.76578
+</td>
+<td style="text-align:right;">
+20.49154
+</td>
+<td style="text-align:right;">
+746.5076
+</td>
+<td style="text-align:right;">
+399.82
+</td>
+<td style="text-align:left;">
+2020-07-13
+</td>
+<td style="text-align:right;">
+192.58
+</td>
+<td style="text-align:left;">
+2019-08-05
+</td>
+<td style="text-align:right;">
+87.85539
+</td>
+<td style="text-align:right;">
+2.15594
+</td>
+<td style="text-align:right;">
+1.19099
+</td>
+<td style="text-align:right;">
+1655326
+</td>
+<td style="text-align:right;">
+4.69024
+</td>
+<td style="text-align:right;">
+22.33105
+</td>
+<td style="text-align:right;">
+25.56711
+</td>
+<td style="text-align:right;">
+8.21953
+</td>
+<td style="text-align:right;">
+79.43374
+</td>
+<td style="text-align:right;">
+33.17073
+</td>
+<td style="text-align:right;">
+30.05619
+</td>
+</tr>
+</tbody>
+</table>
 
 ### get\_reported\_financials
 
@@ -125,8 +569,199 @@ To get annual reported financial data for Apple, we would enter:
 ``` r
 get_reported_financials(symbol = "AAPL", 
                      api.key = api.key, 
-                     frequency = "annual")
+                     frequency = "annual") %>%
+  head() %>%
+  kable()
 ```
+
+<table>
+<thead>
+<tr>
+<th style="text-align:right;">
+year
+</th>
+<th style="text-align:right;">
+quarter
+</th>
+<th style="text-align:left;">
+reportType
+</th>
+<th style="text-align:left;">
+form
+</th>
+<th style="text-align:left;">
+filedDate
+</th>
+<th style="text-align:left;">
+label
+</th>
+<th style="text-align:left;">
+value
+</th>
+<th style="text-align:left;">
+unit
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+2019
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+bs
+</td>
+<td style="text-align:left;">
+10-K
+</td>
+<td style="text-align:left;">
+2019-10-31
+</td>
+<td style="text-align:left;">
+Marketable securities
+</td>
+<td style="text-align:left;">
+5.1713e+10
+</td>
+<td style="text-align:left;">
+usd
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2019
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+bs
+</td>
+<td style="text-align:left;">
+10-K
+</td>
+<td style="text-align:left;">
+2019-10-31
+</td>
+<td style="text-align:left;">
+Accounts receivable, net
+</td>
+<td style="text-align:left;">
+2.2926e+10
+</td>
+<td style="text-align:left;">
+usd
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2019
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+bs
+</td>
+<td style="text-align:left;">
+10-K
+</td>
+<td style="text-align:left;">
+2019-10-31
+</td>
+<td style="text-align:left;">
+Inventories
+</td>
+<td style="text-align:left;">
+4.106e+09
+</td>
+<td style="text-align:left;">
+usd
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2019
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+bs
+</td>
+<td style="text-align:left;">
+10-K
+</td>
+<td style="text-align:left;">
+2019-10-31
+</td>
+<td style="text-align:left;">
+Vendor non-trade receivables
+</td>
+<td style="text-align:left;">
+2.2878e+10
+</td>
+<td style="text-align:left;">
+usd
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2019
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+bs
+</td>
+<td style="text-align:left;">
+10-K
+</td>
+<td style="text-align:left;">
+2019-10-31
+</td>
+<td style="text-align:left;">
+Other current assets
+</td>
+<td style="text-align:left;">
+1.2352e+10
+</td>
+<td style="text-align:left;">
+usd
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2019
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+bs
+</td>
+<td style="text-align:left;">
+10-K
+</td>
+<td style="text-align:left;">
+2019-10-31
+</td>
+<td style="text-align:left;">
+Total current assets
+</td>
+<td style="text-align:left;">
+1.62819e+11
+</td>
+<td style="text-align:left;">
+usd
+</td>
+</tr>
+</tbody>
+</table>
 
 ### get\_company\_filings
 

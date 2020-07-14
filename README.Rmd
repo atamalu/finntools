@@ -5,13 +5,14 @@ output:
     variant: markdown_github
 ---
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "README-"
 )
-library(finntools)
+library(kableExtra)
+
 ```
 
 # finntools
@@ -43,6 +44,10 @@ require(devtools)
 devtools::install_github('atamalu/finntools')
 ```
 
+```{r, warning = FALSE, message = FALSE}
+library(finntools)
+```
+
 ## Functions
 
 ### get_company_news
@@ -51,21 +56,25 @@ devtools::install_github('atamalu/finntools')
 
 #### Example
 
-Let's say we want to get the last 30 days of news for Apple.
+Let's say we want to get the last 30 days of news for Apple
 
-```{r, eval = FALSE}
+```{r}
 get_company_news(symbol = 'AAPL', 
                  api.key = api.key,
-                 last.n.days = 30)
+                 last.n.days = 30) %>%
+  head() %>%
+  kable()
 ```
 
-Or we may want to get the last 30 days of news for Apple. 
+Or we may want to get news for Apple from March of 2020
 
-```{r, eval = FALSE}
+```{r}
 get_company_news(symbol = 'AAPL', 
                  api.key = api.key,
                  start.date = '2020-03-01', 
-                 end.date = '2020-03-30')
+                 end.date = '2020-03-30') %>%
+  head() %>%
+  kable()
 ```
 
 Note: the API limits the number of results, which could be an issue for larger companies.
@@ -78,9 +87,11 @@ Note: the API limits the number of results, which could be an issue for larger c
 
 If we wanted to get sentiment analyses for Apple, we would use
 
-```{r, eval = FALSE}
+```{r}
 get_sentiments(symbol = "AAPL",
-               api.key = api.key)
+               api.key = api.key) %>%
+  head() %>%
+  kable()
 ```
 
 ### get_basic_financials
@@ -91,10 +102,12 @@ get_sentiments(symbol = "AAPL",
 
 To get basic financial price data for Apple, we would enter:
 
-```{r, eval = FALSE}
+```{r}
 get_basic_financials(symbol = "AAPL", 
                      api.key = api.key, 
-                     metric.type = "price")
+                     metric.type = "price") %>%
+  head() %>%
+  kable()
 ```
 
 ### get_reported_financials
@@ -105,10 +118,12 @@ get_basic_financials(symbol = "AAPL",
 
 To get annual reported financial data for Apple, we would enter:
 
-```{r, eval = FALSE}
+```{r}
 get_reported_financials(symbol = "AAPL", 
                      api.key = api.key, 
-                     frequency = "annual")
+                     frequency = "annual") %>%
+  head() %>%
+  kable()
 ```
 
 ### get_company_filings
