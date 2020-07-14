@@ -53,7 +53,7 @@ library(finntools)
 Functions
 ---------
 
-### get\_company\_news
+## get\_company\_news
 
 `get_company_news` retrieves news about a company for a given time range
 
@@ -319,7 +319,7 @@ Sennheiser Momentum True Wireless 2 Earbuds Review \| Digital Trends
 Note: the API limits the number of results, which could be an issue for
 larger companies.
 
-### get\_sentiments
+## get\_sentiments
 
 `get_sentiments` retrieves sentiment analyses of recent articles for a
 given company
@@ -398,7 +398,7 @@ AAPL
 </tbody>
 </table>
 
-### get\_basic\_financials
+## get\_basic\_financials
 
 `get_basic_financials` retrieves basic financial information for a given
 company
@@ -544,7 +544,7 @@ AAPL
 </tbody>
 </table>
 
-### get\_reported\_financials
+## get\_reported\_financials
 
 `get_reported_financials` retrieves financial data through a company’s
 filings
@@ -748,7 +748,7 @@ usd
 </tbody>
 </table>
 
-### get\_company\_filings
+## get\_company\_filings
 
 `get_company_filings` retrieves filings for a specified company or
 identifier
@@ -956,7 +956,7 @@ AAPL
 </tbody>
 </table>
 
-### get\_recommendation\_trends
+## get\_recommendation\_trends
 
 `get_recommendation_trends` retrieves recommendation trends for a given
 company
@@ -1138,7 +1138,7 @@ AAPL
 </tbody>
 </table>
 
-### get\_company\_peers
+## get\_company\_peers
 
 `get_company_peers` retrieves a data frame of stocks with the same
 country and GICS sub-industry as the specified symbol
@@ -1215,7 +1215,7 @@ NTAP
 </tbody>
 </table>
 
-### get\_target\_price
+## get\_target\_price
 
 `get_target_price` retrieves the latest price target consensus for a
 given stock symbol
@@ -1276,7 +1276,7 @@ AAPL
 </tbody>
 </table>
 
-### get\_earnings\_surprise
+## get\_earnings\_surprise
 
 `get_earnings_surprise` retrieves company historical quarterly earnings
 surprise dating back to 2000
@@ -1369,7 +1369,7 @@ AAPL
 </tbody>
 </table>
 
-### get\_market\_news
+## get\_market\_news
 
 `get_market_news` retrieves latest news for a market in a given category
 
@@ -1434,7 +1434,7 @@ SeekingAlpha
 </tbody>
 </table>
 
-### get\_ipo\_calendar
+## get\_ipo\_calendar
 
 `get_ipo_calendar` retrieves information on ipo’s for a given time
 period
@@ -1838,7 +1838,7 @@ LSACU
 </tbody>
 </table>
 
-### get\_stock\_candles
+## get\_stock\_candles
 
 `get_stock_candles` retrieves candlestick data for U.S. stocks dating as
 far back as 25 years
@@ -2006,7 +2006,7 @@ v
 </tbody>
 </table>
 
-### get\_pattern\_recognition
+## get\_pattern\_recognition
 
 `get_pattern_recognition` runs a pattern recognition algorithm on a
 given stock
@@ -2269,7 +2269,7 @@ AAPL.US
 </tbody>
 </table>
 
-### get\_quote
+## get\_quote
 
 `get_quote` retrieves real-time data for a given stock
 
@@ -2329,7 +2329,7 @@ t
 </tbody>
 </table>
 
-### get\_stock\_splits
+## get\_stock\_splits
 
 `get_stock_splits` retrieves stock splits for a given symbol
 
