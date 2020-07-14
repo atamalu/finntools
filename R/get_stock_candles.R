@@ -15,12 +15,12 @@
 #' @return a data frame of stock candles for given inputs
 #' @examples
 #' \donttest{
-#' ### Get stock candles for Apple from last hour, in 1-minute intervals
+#' ### Get stock candles for Apple from last 5 hours, in 1-minute intervals
 #' to.date <- as.numeric(.POSIXct(Sys.time()))
-#' from.date <- to.date - 3600
+#' from.date <- to.date - (5*3600)
 #'
 #' get_stock_candles(symbol = 'AAPL', api.key = api.key,
-#' from.date = from.date, to.date = to.date)
+#' resolution = 1, from.date = from.date, to.date = to.date)
 #' }
 #' @importFrom jsonlite fromJSON
 #' @importFrom utils read.csv
@@ -65,6 +65,8 @@ get_stock_candles <- function(symbol, resolution, from.date, to.date, api.key,
     if(write.file == TRUE){
       write_finn_df(dataframe = df, symbol = symbol, folder.name = 'candles')
     }
+
+    ret = df
 
   } else {
     ret <- fromJSON(pg.url)

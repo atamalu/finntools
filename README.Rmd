@@ -11,14 +11,14 @@ knitr::opts_chunk$set(
   comment = "#>",
   fig.path = "README-"
 )
-library(kableExtra)
-
+options(scipen = 999999)
 ```
 
 # finntools
 
 Finnhub.io offers a wide range of financial data at a price that the average investor can afford. However, much of this information is more useful to users in table format, rather than json. `finntools` helps shorten the gap between data retrieval and usage in a way that provides instant results for beginners and flexibility for more advanced users. Functions will be updated over time. Current ones retrieve:
 
+#### company-based functions
 * `get_company_news` news about a company within a given time period
 * `get_sentiments` sentimental analyses of recent articles about a company
 * `get_basic_financials` basic financial information about a company
@@ -33,6 +33,7 @@ Finnhub.io offers a wide range of financial data at a price that the average inv
 * `get_quote` real-time data for a given stock
 * `get_stock_splits` stock splits for a given symbol
 
+#### market-based functions
 * `get_market_news` latest articles for overall market
 * `get_ipo_calendar` ipo calendar for overall market
 
@@ -58,23 +59,36 @@ library(finntools)
 
 Let's say we want to get the last 30 days of news for Apple
 
-```{r}
+```{r, eval = FALSE, echo = TRUE}
+get_company_news(symbol = 'AAPL', 
+                 api.key = api.key,
+                 last.n.days = 30)
+```
+```{r, eval = TRUE, echo = FALSE}
 get_company_news(symbol = 'AAPL', 
                  api.key = api.key,
                  last.n.days = 30) %>%
   head() %>%
   kable()
+Sys.sleep(3)
 ```
 
 Or we may want to get news for Apple from March of 2020
 
-```{r}
+```{r, eval = FALSE, echo = TRUE}
+get_company_news(symbol = 'AAPL', 
+                 api.key = api.key,
+                 start.date = '2020-03-01', 
+                 end.date = '2020-03-30')
+```
+```{r, eval = TRUE, echo = FALSE}
 get_company_news(symbol = 'AAPL', 
                  api.key = api.key,
                  start.date = '2020-03-01', 
                  end.date = '2020-03-30') %>%
   head() %>%
   kable()
+Sys.sleep(3)
 ```
 
 Note: the API limits the number of results, which could be an issue for larger companies.
@@ -87,11 +101,16 @@ Note: the API limits the number of results, which could be an issue for larger c
 
 If we wanted to get sentiment analyses for Apple, we would use
 
-```{r}
+```{r, eval = FALSE, echo = TRUE}
+get_sentiments(symbol = "AAPL",
+               api.key = api.key)
+```
+```{r, eval = TRUE, echo = FALSE}
 get_sentiments(symbol = "AAPL",
                api.key = api.key) %>%
   head() %>%
   kable()
+Sys.sleep(3)
 ```
 
 ### get_basic_financials
@@ -102,12 +121,18 @@ get_sentiments(symbol = "AAPL",
 
 To get basic financial price data for Apple, we would enter:
 
-```{r}
+```{r, eval = FALSE, echo = TRUE}
+get_basic_financials(symbol = "AAPL", 
+                     api.key = api.key, 
+                     metric.type = "price")
+```
+```{r, eval = TRUE, echo = FALSE}
 get_basic_financials(symbol = "AAPL", 
                      api.key = api.key, 
                      metric.type = "price") %>%
   head() %>%
   kable()
+Sys.sleep(3)
 ```
 
 ### get_reported_financials
@@ -118,12 +143,18 @@ get_basic_financials(symbol = "AAPL",
 
 To get annual reported financial data for Apple, we would enter:
 
-```{r}
+```{r, eval = FALSE, echo = TRUE}
+get_reported_financials(symbol = "AAPL", 
+                     api.key = api.key, 
+                     frequency = "annual")
+```
+```{r, eval = TRUE, echo = FALSE}
 get_reported_financials(symbol = "AAPL", 
                      api.key = api.key, 
                      frequency = "annual") %>%
   head() %>%
   kable()
+Sys.sleep(3)
 ```
 
 ### get_company_filings
@@ -134,11 +165,20 @@ get_reported_financials(symbol = "AAPL",
 
 If we wanted filings for Apple between the beginning of January 2020 and the end of March 2020, we'd do
 
-```{r, eval = FALSE}
+```{r, eval = FALSE, echo = TRUE}
 get_company_filings(symbol = "AAPL", 
                     api.key = api.key,
                     start.date = '2020-01-01', 
                     end.date = '2020-03-31')
+```
+```{r, eval = TRUE, echo = FALSE}
+get_company_filings(symbol = "AAPL", 
+                    api.key = api.key,
+                    start.date = '2020-01-01', 
+                    end.date = '2020-03-31') %>%
+  head() %>%
+  kable()
+Sys.sleep(3)
 ```
 
 ### get_recommendation_trends
@@ -149,9 +189,16 @@ get_company_filings(symbol = "AAPL",
 
 If we wanted recommendation trends for Apple, we'd type
 
-```{r, eval = FALSE}
+```{r, eval = FALSE, echo = TRUE}
 get_recommendation_trends(symbol = "AAPL", 
                           api.key = api.key)
+```
+```{r, eval = TRUE, echo = FALSE}
+get_recommendation_trends(symbol = "AAPL", 
+                          api.key = api.key) %>%
+  head() %>%
+  kable()
+Sys.sleep(3)
 ```
 
 ### get_company_peers
@@ -162,9 +209,16 @@ get_recommendation_trends(symbol = "AAPL",
 
 If we wanted to find companies that are similar to Apple, we'd use
 
-```{r, eval = FALSE}
+```{r, eval = FALSE, echo = TRUE}
 get_company_peers(symbol = "AAPL", 
                   api.key = api.key)
+```
+```{r, eval = TRUE, echo = FALSE}
+get_company_peers(symbol = "AAPL", 
+                  api.key = api.key) %>%
+  head() %>%
+  kable()
+Sys.sleep(3)
 ```
 
 ### get_target_price
@@ -175,9 +229,16 @@ get_company_peers(symbol = "AAPL",
 
 Let's say that we want to get target prices for Apple
 
-```{r, eval = FALSE}
+```{r, eval = FALSE, echo = TRUE}
 get_target_price(symbol = 'AAPL',
                  api.key = api.key)
+```
+```{r, eval = TRUE, echo = FALSE}
+get_target_price(symbol = 'AAPL',
+                 api.key = api.key) %>%
+  head() %>%
+  kable()
+Sys.sleep(3)
 ```
 
 ### get_earnings_surprise
@@ -188,10 +249,18 @@ get_target_price(symbol = 'AAPL',
 
 Let's say that we want to get earnings surprises for Apple from the 4 most recent periods
 
-```{r, eval = FALSE}
+```{r, eval = FALSE, echo = TRUE}
 get_earnings_surprise(symbol = 'AAPL', 
                       num.periods = 4, 
                       api.key = api.key)
+```
+```{r, eval = TRUE, echo = FALSE}
+get_earnings_surprise(symbol = 'AAPL', 
+                      num.periods = 4, 
+                      api.key = api.key) %>%
+  head() %>%
+  kable()
+Sys.sleep(3)
 ```
 
 ### get_market_news
@@ -202,9 +271,17 @@ get_earnings_surprise(symbol = 'AAPL',
 
 To get the latest market news on mergers, we'd enter
 
-```{r, eval = FALSE}
+```{r, eval = FALSE, echo = TRUE}
 get_market_news(category = "merger",
                 api.key = api.key)
+```
+```{r, eval = TRUE, echo = FALSE}
+get_market_news(category = "merger",
+                api.key = api.key) %>%
+  head() %>%
+  .[1,] %>% # only return 1 row to fit table to github page
+  kable()
+Sys.sleep(3)
 ```
 
 ### get_ipo_calendar
@@ -215,14 +292,32 @@ get_market_news(category = "merger",
 
 Let's say we want to get ipo's from the last 30 days
 
-```{r, eval = FALSE}
-get_ipo_calendar(api.key = api.key, last.n.days = 30)
+```{r, eval = FALSE, echo = TRUE}
+get_ipo_calendar(api.key = api.key, 
+                 last.n.days = 30)
+```
+```{r, eval = TRUE, echo = FALSE}
+get_ipo_calendar(api.key = api.key, 
+                 last.n.days = 30) %>%
+  head() %>%
+  kable()
+Sys.sleep(3)
 ```
 
 Or we may want to get information on ipo's from March of 2020
 
-```{r, eval = FALSE}
-get_ipo_calendar(api.key = api.key, start.date = '2020-03-01', end.date = '2020-03-31')
+```{r, eval = FALSE, echo = TRUE}
+get_ipo_calendar(api.key = api.key, 
+                 start.date = '2020-03-01', 
+                 end.date = '2020-03-31')
+```
+```{r, eval = TRUE, echo = FALSE}
+get_ipo_calendar(api.key = api.key, 
+                 start.date = '2020-03-01', 
+                 end.date = '2020-03-31') %>%
+  head() %>%
+  kable()
+Sys.sleep(3)
 ```
 
 ### get_stock_candles
@@ -231,16 +326,30 @@ get_ipo_calendar(api.key = api.key, start.date = '2020-03-01', end.date = '2020-
 
 #### Example
 
-If we wanted stock candles for Apple from the last hour in 1-minute intervals, we'd enter
+If we wanted stock candles for Apple from the 5 hours in 1-minute intervals, we'd enter
 
-```{r, eval = FALSE}
+```{r, eval = FALSE, echo = TRUE}
 to.date <- as.numeric(.POSIXct(Sys.time()))
-from.date <- to.date - 3600
+from.date <- to.date - (5*3600)
 
 get_stock_candles(symbol = 'AAPL', 
                   api.key = api.key,
+                  resolution = 1,
                   from.date = from.date, 
                   to.date = to.date)
+```
+```{r, eval = TRUE, echo = FALSE}
+to.date <- as.numeric(.POSIXct(Sys.time()))
+from.date <- to.date - (5*3600)
+
+get_stock_candles(symbol = 'AAPL', 
+                  api.key = api.key,
+                  resolution = 1,
+                  from.date = from.date, 
+                  to.date = to.date) %>%
+  head() %>%
+  kable()
+Sys.sleep(3)
 ```
 
 ### get_pattern_recognition
@@ -251,10 +360,18 @@ get_stock_candles(symbol = 'AAPL',
 
 To run a pattern recognition algorithm for Apple with resolution of 1 day
 
-```{r, eval = FALSE}
+```{r, eval = FALSE, echo = TRUE}
 get_pattern_recognition(symbol = 'AAPL', 
                         resolution = 'D', 
                         api.key = api.key)
+```
+```{r, eval = TRUE, echo = FALSE}
+get_pattern_recognition(symbol = 'AAPL', 
+                        resolution = 'D', 
+                        api.key = api.key) %>%
+  head() %>%
+  kable()
+Sys.sleep(3)
 ```
 
 ### get_quote
@@ -265,9 +382,16 @@ get_pattern_recognition(symbol = 'AAPL',
 
 If we wanted a real-time quote for Apple, we'd enter
 
-```{r, eval = FALSE}
+```{r, eval = FALSE, echo = TRUE}
 get_quote(symbol = 'AAPL', 
           api.key = api.key)
+```
+```{r, eval = TRUE, echo = FALSE}
+get_quote(symbol = 'AAPL', 
+          api.key = api.key) %>%
+  head() %>%
+  kable()
+Sys.sleep(3)
 ```
 
 ### get_stock_splits
@@ -278,12 +402,26 @@ get_quote(symbol = 'AAPL',
 
 Let's say we want to get stock splits for Apple for a 30-day time period
 
-```{r, eval = FALSE}
-from.date = Sys.Date() - 20
-to.date = Sys.Date() 
+```{r, eval = FALSE, echo = TRUE}
+from.date = '2010-01-01'
+to.date = '2020-01-01'
 
 get_stock_splits(symbol = 'AAPL', 
                  from.date = from.date,
                  to.date = to.date,
                  api.key = api.key)
 ```
+```{r, eval = TRUE, echo = FALSE}
+from.date = '2010-01-01'
+to.date = '2020-01-01'
+
+get_stock_splits(symbol = 'AAPL', 
+                 from.date = from.date,
+                 to.date = to.date,
+                 api.key = api.key) %>%
+  head() %>%
+  kable()
+Sys.sleep(3)
+```
+
+Note: as-of 2020-07-14, this is not a very useful endpoint

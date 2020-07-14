@@ -25,7 +25,7 @@ get_quote <- function(symbol, api.key, translate.date = TRUE, write.file = FALSE
   df <- as.data.frame(t(df))
 
   if(translate.date == TRUE){
-    df$datetime <- .POSIXct(df$datetime)
+    df$t <- .POSIXct(df$t)
   }
   if(write.file == TRUE){
     write_finn_df(dataframe = df, symbol = symbol, folder.name = 'quotes')

@@ -9,9 +9,9 @@ get_stock_splits(symbol, from.date, to.date, api.key, write.file = FALSE)
 \arguments{
 \item{symbol}{the stock symbol to retrieve data for}
 
-\item{from.date}{the first date to retrieve data for}
+\item{from.date}{the first date to retrieve data for (YYYY-MM-DD)}
 
-\item{to.date}{the last date to retrieve data for}
+\item{to.date}{the last date to retrieve data for (YYYY-MM-DD)}
 
 \item{api.key}{your API token from finnhub.io}
 
@@ -25,9 +25,9 @@ a data frame of stock splits
 }
 \examples{
 \donttest{
-### Get stock splits for Apple
-from.date = Sys.Date() - 20
-to.date = Sys.Date()
+### Get last 10 years of stock splits for Apple
+from.date = '2010-01-01'
+to.date = '2020-01-01'
 
 get_stock_splits(symbol = 'AAPL', from.date = from.date,
 to.date = to.date, api.key = api.key)
