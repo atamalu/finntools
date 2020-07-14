@@ -27,9 +27,14 @@ Finnhub.io offers a wide range of financial data at a price that the average inv
 * `get_company_peers` stocks with the same country and GICS sub-industry as the specified company
 * `get_target_price` the latest price target consensus for a given company
 * `get_earnings_surprise` company historical quarterly earnings surprise dating back to 2000
+* `get_stock_candles` candlestick data for U.S. stocks dating as far back as 25 years
+* `get_pattern_recognition` results of a pattern recognition algorithm on a given stock
+* `get_quote` real-time data for a given stock
+* `get_stock_splits` stock splits for a given symbol
 
 * `get_market_news` latest articles for overall market
 * `get_ipo_calendar` ipo calendar for overall market
+
 ## Installation
 ```{r, eval = FALSE}
 ### Install from Github
@@ -42,19 +47,6 @@ devtools::install_github('atamalu/finntools')
 ### get_company_news
 
 `get_company_news` retrieves news about a company for a given time range
-<BR>
-<BR>
-<details>
-  <summary>Parameters (expand)</summary>
-`symbol` the stock symbol to retrieve company news for <BR>
-`api.key` your API token from finnhub.io <BR>
-`start.date`the earliest date to get news for (YYYY-MM-DD) <BR>
-`end.date` the latest date to get news for (YYYY-MM-DD) <BR>
-`last.n.days` the range of days to get data for <BR>
-* ignore if using start.date and end.date <BR>
-`translate.date` declares whether UNIX time should be convered to YYYY-MM-DD date format <BR>
-`write.file` declares whether data should be written to .csv file
-</details>
 
 #### Example
 
@@ -80,14 +72,6 @@ Note: the API limits the number of results, which could be an issue for larger c
 ### get_sentiments
 
 `get_sentiments` retrieves sentiment analyses of recent articles for a given company
-<BR>
-<BR>
-<details>
-  <summary>Parameters (expand)</summary>
-`symbol` the stock symbol to retrieve company news for <BR>
-`api.key` your API token from finnhub.io <BR>
-`write.file` declares whether data should be written to .csv file
-</details>
 
 #### Example
 
@@ -101,16 +85,6 @@ get_sentiments(symbol = "AAPL",
 ### get_basic_financials
 
 `get_basic_financials` retrieves basic financial information for a given company
-<BR>
-<BR>
-<details>
-  <summary>Parameters (expand)</summary>
-`symbol` the stock symbol to retrieve company news for <BR>
-`api.key` your API token from finnhub.io <BR>
-`metric.type` the type of metric to retrieve data for <BR>
-* options include: "all", "price", "valuation", "margin" <BR>
-`write.file` declares whether data should be written to .csv file
-</details>
 
 #### Example
 
@@ -125,16 +99,6 @@ get_basic_financials(symbol = "AAPL",
 ### get_reported_financials
 
 `get_reported_financials` retrieves financial data through a company's filings
-<BR>
-<BR>
-<details>
-  <summary>Parameters (expand)</summary>
-`symbol` the stock symbol to retrieve company news for <BR>
-`api.key` your API token from finnhub.io <BR>
-`frequency` the time period encompassed by the report(s) <BR>
-* options include: "annual", "quarterly" <BR>
-`write.file` declares whether data should be written to .csv file
-</details>
 
 #### Example
 
@@ -149,21 +113,6 @@ get_reported_financials(symbol = "AAPL",
 ### get_company_filings
 
 `get_company_filings` retrieves filings for a specified company or identifier
-
-<BR>
-<BR>
-<details>
-  <summary>Parameters (expand)</summary>
-`symbol` the stock symbol to retrieve company news for <BR>
-`cik` the central index key to retrieve company filings for <BR>
-`access.number` the access number to retrieve company filings for <BR>
-`form` filter by type of filing form <BR>
-`api.key` your API token from finnhub.io <BR>
-`last.n.days` the range of days to get data for when start and end dates are NA (default) <BR>
-`start.date` the earliest date to get news for (YYYY-MM-DD) <BR>
-`end.date` the latest date to get news for (YYYY-MM-DD) <BR>
-`write.file` declares whether data should be written to .csv file
-</details>
 
 #### Example
 
@@ -180,15 +129,6 @@ get_company_filings(symbol = "AAPL",
 
 `get_recommendation_trends` retrieves recommendation trends for a given company
 
-<BR>
-<BR>
-<details>
-  <summary>Parameters (expand)</summary>
-`symbol` the stock symbol to retrieve company news for <BR>
-`api.key` your API token from finnhub.io <BR>
-`write.file` declares whether data should be written to .csv file
-</details>
-
 #### Example
 
 If we wanted recommendation trends for Apple, we'd type
@@ -201,15 +141,6 @@ get_recommendation_trends(symbol = "AAPL",
 ### get_company_peers
 
 `get_company_peers` retrieves a data frame of stocks with the same country and GICS sub-industry as the specified symbol
-
-<BR>
-<BR>
-<details>
-  <summary>Parameters (expand)</summary>
-`symbol` the stock symbol to retrieve company news for <BR>
-`api.key` your API token from finnhub.io <BR>
-`write.file` declares whether data should be written to .csv file
-</details>
 
 #### Example
 
@@ -224,15 +155,6 @@ get_company_peers(symbol = "AAPL",
 
 `get_target_price` retrieves the latest price target consensus for a given stock symbol
 
-<BR>
-<BR>
-<details>
-  <summary>Parameters (expand)</summary>
-`symbol` the stock symbol to retrieve company news for <BR>
-`api.key` your API token from finnhub.io <BR>
-`write.file` declares whether data should be written to .csv file
-</details>
-
 #### Example
 
 Let's say that we want to get target prices for Apple
@@ -245,16 +167,6 @@ get_target_price(symbol = 'AAPL',
 ### get_earnings_surprise
 
 `get_earnings_surprise` retrieves company historical quarterly earnings surprise dating back to 2000
-
-<BR>
-<BR>
-<details>
-  <summary>Parameters (expand)</summary>
-`symbol` the stock symbol to retrieve company news for <BR>
-`api.key` your API token from finnhub.io <BR>
-`num.periods` the number of periods to get data for; leave blank to get full history <BR>
-`write.file` declares whether data should be written to .csv file
-</details>
 
 #### Example
 
@@ -269,17 +181,6 @@ get_earnings_surprise(symbol = 'AAPL',
 ### get_market_news
 
 `get_market_news` retrieves latest news for a market in a given category
-<BR>
-<BR>
-<details>
-  <summary>Parameters (expand)</summary>
-`category` the category of news to retrieve <BR>
-* options include: "general", "forex", "crypto", "merger" <BR>
-`api.key` your API token from finnhub.io <BR>
-`minid` only get news after a specific id <BR>
-`translate.date` declares whether UNIX time should be converted to standard date-time format <BR>
-`write.file` declares whether data should be written to .csv file
-</details>
 
 #### Example
 
@@ -293,17 +194,6 @@ get_market_news(category = "merger",
 ### get_ipo_calendar
 
 `get_ipo_calendar` retrieves information on ipo's for a given time period
-<BR>
-<BR>
-<details>
-  <summary>Parameters (expand)</summary>
-`api.key` your API token from finnhub.io <BR>
-`last.n.days` the range of days to get data for <BR>
-* ignore if using start.date and end.date <BR>
-`start.date`the earliest date to get news for (YYYY-MM-DD) <BR>
-`end.date` the latest date to get news for (YYYY-MM-DD) <BR>
-`write.file` declares whether data should be written to .csv file
-</details>
 
 #### Example
 
@@ -317,4 +207,67 @@ Or we may want to get information on ipo's from March of 2020
 
 ```{r, eval = FALSE}
 get_ipo_calendar(api.key = api.key, start.date = '2020-03-01', end.date = '2020-03-31')
+```
+
+### get_stock_candles
+
+`get_stock_candles` retrieves candlestick data for U.S. stocks dating as far back as 25 years
+
+#### Example
+
+If we wanted stock candles for Apple from the last hour in 1-minute intervals, we'd enter
+
+```{r, eval = FALSE}
+to.date <- as.numeric(.POSIXct(Sys.time()))
+from.date <- to.date - 3600
+
+get_stock_candles(symbol = 'AAPL', 
+                  api.key = api.key,
+                  from.date = from.date, 
+                  to.date = to.date)
+```
+
+### get_pattern_recognition
+
+`get_pattern_recognition` runs a pattern recognition algorithm on a given stock
+
+#### Example
+
+To run a pattern recognition algorithm for Apple with resolution of 1 day
+
+```{r, eval = FALSE}
+get_pattern_recognition(symbol = 'AAPL', 
+                        resolution = 'D', 
+                        api.key = api.key)
+```
+
+### get_quote
+
+`get_quote` retrieves real-time data for a given stock
+
+#### Example
+
+If we wanted a real-time quote for Apple, we'd enter
+
+```{r, eval = FALSE}
+get_quote(symbol = 'AAPL', 
+          api.key = api.key)
+```
+
+### get_stock_splits
+
+`get_stock_splits` retrieves stock splits for a given symbol
+
+#### Example
+
+Let's say we want to get stock splits for Apple for a 30-day time period
+
+```{r, eval = FALSE}
+from.date = Sys.Date() - 20
+to.date = Sys.Date() 
+
+get_stock_splits(symbol = 'AAPL', 
+                 from.date = from.date,
+                 to.date = to.date,
+                 api.key = api.key)
 ```
