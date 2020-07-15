@@ -53,7 +53,7 @@ library(finntools)
 Functions
 ---------
 
-## get\_company\_news
+### get\_company\_news
 
 `get_company_news` retrieves news about a company for a given time range
 
@@ -68,13 +68,11 @@ get_company_news(symbol = 'AAPL',
 ```
 
     #> [1] "Retrieving last 30 days of news for AAPL"
-    #> [1] "171 unique articles successfully retrieved."
+    #> [1] "165 unique articles successfully retrieved."
 
 <table>
 <thead>
 <tr>
-<th style="text-align:left;">
-</th>
 <th style="text-align:left;">
 date
 </th>
@@ -92,108 +90,90 @@ url
 <tbody>
 <tr>
 <td style="text-align:left;">
-1
+2020-07-15
 </td>
 <td style="text-align:left;">
-2020-07-14
+Twitter Accounts of Bill Gates, Jeff Bezos, Elon Musk Appear to Have
+Been Hacked
 </td>
 <td style="text-align:left;">
-Dow Jones Futures Rise On Moderna Coronavirus Vaccine News After Stock
-Market Rally, Apple, Tesla Rise, UnitedHealth, Goldman, ASML Earnings On
-Tap
+wsj
 </td>
 <td style="text-align:left;">
-Yahoo
-</td>
-<td style="text-align:left;">
-<a href="https://finance.yahoo.com/m/1895c7b8-d2b5-32c2-9057-856442438c38/dow-jones-futures-rise-on.html" class="uri">https://finance.yahoo.com/m/1895c7b8-d2b5-32c2-9057-856442438c38/dow-jones-futures-rise-on.html</a>
+<a href="https://www.wsj.com/articles/twitter-accounts-of-bill-gates-jeff-bezos-elon-musk-appear-to-have-been-hacked-11594849077" class="uri">https://www.wsj.com/articles/twitter-accounts-of-bill-gates-jeff-bezos-elon-musk-appear-to-have-been-hacked-11594849077</a>
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-2
+2020-07-15
 </td>
 <td style="text-align:left;">
-2020-07-14
+Hackers compromise Twitter accounts of Elon Musk, Bill Gates, Apple,
+others in crypto scam
 </td>
 <td style="text-align:left;">
-iPhone 12 might come with braided Lightning-to-USB-C cable
+marketwatch
 </td>
 <td style="text-align:left;">
-<a href="https://www.cultofmac.com" class="uri">https://www.cultofmac.com</a>
-</td>
-<td style="text-align:left;">
-<a href="https://www.cultofmac.com/717233/iphone-12-braided-lightning-to-usb-c-cable-rumor/" class="uri">https://www.cultofmac.com/717233/iphone-12-braided-lightning-to-usb-c-cable-rumor/</a>
+<a href="https://www.marketwatch.com/story/hackers-compromise-twitter-accounts-of-elon-musk-bill-gates-apple-others-in-crypto-scam-2020-07-15" class="uri">https://www.marketwatch.com/story/hackers-compromise-twitter-accounts-of-elon-musk-bill-gates-apple-others-in-crypto-scam-2020-07-15</a>
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-3
+2020-07-15
 </td>
 <td style="text-align:left;">
-2020-07-14
+Morning mail: $2bn for skills training, ‘stage four’ lockdown explained,
+RBG out of hospital
 </td>
 <td style="text-align:left;">
-The Morning Show season 2 release date, cast, trailer, plot: When is it
-out on Apple?
+theguardian
 </td>
 <td style="text-align:left;">
-<a href="https://www.express.co.uk" class="uri">https://www.express.co.uk</a>
-</td>
-<td style="text-align:left;">
-<a href="https://www.express.co.uk/showbiz/tv-radio/1309585/The-Morning-Show-season-2-release-date-cast-trailer-plot-when-out-Apple-TV-Plus" class="uri">https://www.express.co.uk/showbiz/tv-radio/1309585/The-Morning-Show-season-2-release-date-cast-trailer-plot-when-out-Apple-TV-Plus</a>
+<a href="https://www.theguardian.com/australia-news/2020/jul/16/morning-mail-2bn-for-skills-training-stage-four-lockdown-explained-rbg-out-of-hospital" class="uri">https://www.theguardian.com/australia-news/2020/jul/16/morning-mail-2bn-for-skills-training-stage-four-lockdown-explained-rbg-out-of-hospital</a>
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-4
+2020-07-15
 </td>
 <td style="text-align:left;">
-2020-07-14
-</td>
-<td style="text-align:left;">
-NBC’s video service Peacock stresses ‘free,’ looks to 2021
-</td>
-<td style="text-align:left;">
-abcnews
-</td>
-<td style="text-align:left;">
-<a href="https://abcnews.go.com/Business/wireStory/nbcs-video-service-peacock-stresses-free-2021-71784553" class="uri">https://abcnews.go.com/Business/wireStory/nbcs-video-service-peacock-stresses-free-2021-71784553</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-6
-</td>
-<td style="text-align:left;">
-2020-07-14
-</td>
-<td style="text-align:left;">
-Report: Apple TV+ beats its viewership records following release of
-‘Greyhound’ - 9to5Mac
+Apple’s official Twitter account hacked in widespread cryptocurrency
+scam - 9to5Mac
 </td>
 <td style="text-align:left;">
 <a href="https://9to5mac.com" class="uri">https://9to5mac.com</a>
 </td>
 <td style="text-align:left;">
-<a href="https://9to5mac.com/2020/07/14/greyhound-viewership-apple-tv-plus/" class="uri">https://9to5mac.com/2020/07/14/greyhound-viewership-apple-tv-plus/</a>
+<a href="https://9to5mac.com/2020/07/15/apple-twitter-account-hacked/" class="uri">https://9to5mac.com/2020/07/15/apple-twitter-account-hacked/</a>
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-7
+2020-07-15
 </td>
 <td style="text-align:left;">
-2020-07-14
+U.S. Stocks Finish Higher After Promising Vaccine Study
 </td>
 <td style="text-align:left;">
-Can’t schedule Dark Mode or Night Shift on iPhone and iPad? Here’s a fix
+<a href="https://www.marketscreener.com" class="uri">https://www.marketscreener.com</a>
 </td>
 <td style="text-align:left;">
-<a href="https://www.cultofmac.com" class="uri">https://www.cultofmac.com</a>
+<a href="https://www.marketscreener.com/news/U-S-Stocks-Finish-Higher-After-Promising-Vaccine-Study--30930871/" class="uri">https://www.marketscreener.com/news/U-S-Stocks-Finish-Higher-After-Promising-Vaccine-Study--30930871/</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020-07-15
 </td>
 <td style="text-align:left;">
-<a href="https://www.cultofmac.com/717221/schedule-dark-mode-night-shift-iphone-ipad-fix/" class="uri">https://www.cultofmac.com/717221/schedule-dark-mode-night-shift-iphone-ipad-fix/</a>
+Why Peacock and HBO Max aren’t on the biggest streaming platforms
+</td>
+<td style="text-align:left;">
+<a href="https://www.theverge.com" class="uri">https://www.theverge.com</a>
+</td>
+<td style="text-align:left;">
+<a href="https://www.theverge.com/21324139/art-club" class="uri">https://www.theverge.com/21324139/art-club</a>
 </td>
 </tr>
 </tbody>
@@ -319,7 +299,7 @@ Sennheiser Momentum True Wireless 2 Earbuds Review \| Digital Trends
 Note: the API limits the number of results, which could be an issue for
 larger companies.
 
-## get\_sentiments
+### get\_sentiments
 
 `get_sentiments` retrieves sentiment analyses of recent articles for a
 given company
@@ -368,28 +348,28 @@ symbol
 <tbody>
 <tr>
 <td style="text-align:right;">
-234
+248
 </td>
 <td style="text-align:right;">
-0.8327
+0.8641
 </td>
 <td style="text-align:right;">
-281
+287
 </td>
 <td style="text-align:right;">
-0.8421
+0.85
 </td>
 <td style="text-align:right;">
-0.6646
+0.6534
 </td>
 <td style="text-align:right;">
-0.5236
+0.5256
 </td>
 <td style="text-align:right;">
-0.1112
+0.1053
 </td>
 <td style="text-align:right;">
-0.8888
+0.8947
 </td>
 <td style="text-align:left;">
 AAPL
@@ -398,7 +378,7 @@ AAPL
 </tbody>
 </table>
 
-## get\_basic\_financials
+### get\_basic\_financials
 
 `get_basic_financials` retrieves basic financial information for a given
 company
@@ -544,7 +524,7 @@ AAPL
 </tbody>
 </table>
 
-## get\_reported\_financials
+### get\_reported\_financials
 
 `get_reported_financials` retrieves financial data through a company’s
 filings
@@ -748,7 +728,7 @@ usd
 </tbody>
 </table>
 
-## get\_company\_filings
+### get\_company\_filings
 
 `get_company_filings` retrieves filings for a specified company or
 identifier
@@ -956,7 +936,7 @@ AAPL
 </tbody>
 </table>
 
-## get\_recommendation\_trends
+### get\_recommendation\_trends
 
 `get_recommendation_trends` retrieves recommendation trends for a given
 company
@@ -1138,7 +1118,7 @@ AAPL
 </tbody>
 </table>
 
-## get\_company\_peers
+### get\_company\_peers
 
 `get_company_peers` retrieves a data frame of stocks with the same
 country and GICS sub-industry as the specified symbol
@@ -1215,7 +1195,7 @@ NTAP
 </tbody>
 </table>
 
-## get\_target\_price
+### get\_target\_price
 
 `get_target_price` retrieves the latest price target consensus for a
 given stock symbol
@@ -1276,7 +1256,7 @@ AAPL
 </tbody>
 </table>
 
-## get\_earnings\_surprise
+### get\_earnings\_surprise
 
 `get_earnings_surprise` retrieves company historical quarterly earnings
 surprise dating back to 2000
@@ -1369,7 +1349,7 @@ AAPL
 </tbody>
 </table>
 
-## get\_market\_news
+### get\_market\_news
 
 `get_market_news` retrieves latest news for a market in a given category
 
@@ -1414,13 +1394,13 @@ url
 merger
 </td>
 <td style="text-align:left;">
-2020-07-14 15:39:22
+2020-07-15 14:59:06
 </td>
 <td style="text-align:left;">
-Altice closes deal for New Jersey’s Service Electric Cable
+Dell exploring spin-off of VMware stake; shares rise
 </td>
 <td style="text-align:right;">
-4977064
+4982187
 </td>
 <td style="text-align:left;">
 SeekingAlpha
@@ -1428,13 +1408,13 @@ SeekingAlpha
 <td style="text-align:left;">
 </td>
 <td style="text-align:left;">
-<a href="https://seekingalpha.com/news/3591234-altice-closes-deal-for-new-jerseys-service-electric-cable?utm_source=feed_news_m_a&amp;utm_medium=referral" class="uri">https://seekingalpha.com/news/3591234-altice-closes-deal-for-new-jerseys-service-electric-cable?utm_source=feed_news_m_a&amp;utm_medium=referral</a>
+<a href="https://seekingalpha.com/news/3591640-dell-exploring-spin-off-of-vmware-stake-shares-rise?utm_source=feed_news_m_a&amp;utm_medium=referral" class="uri">https://seekingalpha.com/news/3591640-dell-exploring-spin-off-of-vmware-stake-shares-rise?utm_source=feed_news_m_a&amp;utm_medium=referral</a>
 </td>
 </tr>
 </tbody>
 </table>
 
-## get\_ipo\_calendar
+### get\_ipo\_calendar
 
 `get_ipo_calendar` retrieves information on ipo’s for a given time
 period
@@ -1482,146 +1462,68 @@ totalSharesValue
 <tbody>
 <tr>
 <td style="text-align:left;">
-2020-07-10
+2020-07-15
+</td>
+<td style="text-align:left;">
+NASDAQ Global
+</td>
+<td style="text-align:left;">
+GoHealth, Inc. 
+</td>
+<td style="text-align:right;">
+39500000
+</td>
+<td style="text-align:left;">
+18.00-20.00
+</td>
+<td style="text-align:left;">
+expected
+</td>
+<td style="text-align:left;">
+GOCO
+</td>
+<td style="text-align:right;">
+908500000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020-07-14
 </td>
 <td style="text-align:left;">
 NASDAQ Global Select
 </td>
 <td style="text-align:left;">
-Nkarta, Inc. 
+NCINO, INC.
 </td>
 <td style="text-align:right;">
-13000000
+7625000
 </td>
 <td style="text-align:left;">
-16.00-17.00
+28.00-29.00
 </td>
 <td style="text-align:left;">
 expected
 </td>
 <td style="text-align:left;">
-NKTX
+NCNO
 </td>
 <td style="text-align:right;">
-254150000
+254293750
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-2020-07-10
+2020-07-13
 </td>
 <td style="text-align:left;">
-NASDAQ Global
+NYSE MKT
 </td>
 <td style="text-align:left;">
-Inventiva S.A.
+PTK Acquisition Corp. 
 </td>
 <td style="text-align:right;">
-7478261
-</td>
-<td style="text-align:left;">
-13.40-15.40
-</td>
-<td style="text-align:left;">
-expected
-</td>
-<td style="text-align:left;">
-IVA
-</td>
-<td style="text-align:right;">
-132440000
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2020-07-10
-</td>
-<td style="text-align:left;">
-NASDAQ Global Select
-</td>
-<td style="text-align:left;">
-Poseida Therapeutics, Inc. 
-</td>
-<td style="text-align:right;">
-14000000
-</td>
-<td style="text-align:left;">
-16.00
-</td>
-<td style="text-align:left;">
-expected
-</td>
-<td style="text-align:left;">
-PSTX
-</td>
-<td style="text-align:right;">
-257600000
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2020-07-10
-</td>
-<td style="text-align:left;">
-NASDAQ Global
-</td>
-<td style="text-align:left;">
-QUHUO Ltd
-</td>
-<td style="text-align:right;">
-2700000
-</td>
-<td style="text-align:left;">
-9.00-11.00
-</td>
-<td style="text-align:left;">
-expected
-</td>
-<td style="text-align:left;">
-QH
-</td>
-<td style="text-align:right;">
-34155000
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2020-07-08
-</td>
-<td style="text-align:left;">
-NASDAQ Global
-</td>
-<td style="text-align:left;">
-BlueCity Holdings Ltd
-</td>
-<td style="text-align:right;">
-5300000
-</td>
-<td style="text-align:left;">
-16.00
-</td>
-<td style="text-align:left;">
-priced
-</td>
-<td style="text-align:left;">
-BLCT
-</td>
-<td style="text-align:right;">
-84800000
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2020-07-08
-</td>
-<td style="text-align:left;">
-NASDAQ Capital
-</td>
-<td style="text-align:left;">
-Therapeutics Acquisition Corp. 
-</td>
-<td style="text-align:right;">
-11800000
+10000000
 </td>
 <td style="text-align:left;">
 10.00
@@ -1630,10 +1532,87 @@ Therapeutics Acquisition Corp. 
 priced
 </td>
 <td style="text-align:left;">
-TXAC
+PTK’U
 </td>
 <td style="text-align:right;">
-118000000
+100000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020-07-13
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NEW AFRICA PETROLEUM, CORP
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+filed
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:right;">
+14000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020-07-13
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+E.Merge Technology Acquisition Corp. 
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+filed
+</td>
+<td style="text-align:left;">
+ETACU
+</td>
+<td style="text-align:right;">
+575000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020-07-13
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+BigCommerce Holdings, Inc. 
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+filed
+</td>
+<td style="text-align:left;">
+BIGC
+</td>
+<td style="text-align:right;">
+100000000
 </td>
 </tr>
 </tbody>
@@ -1838,7 +1817,7 @@ LSACU
 </tbody>
 </table>
 
-## get\_stock\_candles
+### get\_stock\_candles
 
 `get_stock_candles` retrieves candlestick data for U.S. stocks dating as
 far back as 25 years
@@ -1885,19 +1864,19 @@ v
 <tbody>
 <tr>
 <td style="text-align:left;">
-2020-07-14 11:52:00
+2020-07-15 10:48:00
 </td>
 <td style="text-align:right;">
-383.2799
+389.7101
 </td>
 <td style="text-align:right;">
-383.5000
+389.7455
 </td>
 <td style="text-align:right;">
-383.22
+389.4658
 </td>
 <td style="text-align:right;">
-383.4228
+389.6300
 </td>
 <td style="text-align:right;">
 0
@@ -1905,108 +1884,108 @@ v
 </tr>
 <tr>
 <td style="text-align:left;">
-2020-07-14 11:53:00
+2020-07-15 10:49:00
 </td>
 <td style="text-align:right;">
-383.4200
+389.6300
 </td>
 <td style="text-align:right;">
-384.2200
+389.6300
 </td>
 <td style="text-align:right;">
-383.42
+389.4033
 </td>
 <td style="text-align:right;">
-384.2200
+389.5900
 </td>
 <td style="text-align:right;">
-99864
+35993
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-2020-07-14 11:54:00
+2020-07-15 10:50:00
 </td>
 <td style="text-align:right;">
-384.1600
+389.5700
 </td>
 <td style="text-align:right;">
-384.5800
+390.0100
 </td>
 <td style="text-align:right;">
-384.12
+389.5100
 </td>
 <td style="text-align:right;">
-384.3800
+390.0100
 </td>
 <td style="text-align:right;">
-101125
+81457
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-2020-07-14 11:55:00
+2020-07-15 10:51:00
 </td>
 <td style="text-align:right;">
-384.3635
+390.0050
 </td>
 <td style="text-align:right;">
-384.6000
+390.1900
 </td>
 <td style="text-align:right;">
-383.98
+389.8500
 </td>
 <td style="text-align:right;">
-384.5000
+390.0816
 </td>
 <td style="text-align:right;">
-95125
+68412
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-2020-07-14 11:56:00
+2020-07-15 10:52:00
 </td>
 <td style="text-align:right;">
-384.5300
+390.0700
 </td>
 <td style="text-align:right;">
-384.7990
+390.1000
 </td>
 <td style="text-align:right;">
-384.47
+389.6700
 </td>
 <td style="text-align:right;">
-384.4700
+389.8300
 </td>
 <td style="text-align:right;">
-63792
+40915
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-2020-07-14 11:57:00
+2020-07-15 10:53:00
 </td>
 <td style="text-align:right;">
-384.5096
+389.8450
 </td>
 <td style="text-align:right;">
-384.5623
+389.9100
 </td>
 <td style="text-align:right;">
-384.07
+389.6800
 </td>
 <td style="text-align:right;">
-384.3301
+389.6800
 </td>
 <td style="text-align:right;">
-47816
+32155
 </td>
 </tr>
 </tbody>
 </table>
 
-## get\_pattern\_recognition
+### get\_pattern\_recognition
 
 `get_pattern_recognition` runs a pattern recognition algorithm on a
 given stock
@@ -2132,7 +2111,7 @@ start\_time
 1585575000
 </td>
 <td style="text-align:right;">
-247.51
+247.50
 </td>
 <td style="text-align:right;">
 1585747800
@@ -2153,10 +2132,10 @@ Flag
 bearish
 </td>
 <td style="text-align:right;">
-229.74
+229.70
 </td>
 <td style="text-align:right;">
-162.06
+162.1
 </td>
 <td style="text-align:right;">
 1585575000
@@ -2165,7 +2144,7 @@ bearish
 failed
 </td>
 <td style="text-align:right;">
-265.290
+265.300
 </td>
 <td style="text-align:left;">
 AAPL.US
@@ -2236,7 +2215,7 @@ bearish
 276.59
 </td>
 <td style="text-align:right;">
-0.00
+0.0
 </td>
 <td style="text-align:right;">
 1582554600
@@ -2269,7 +2248,7 @@ AAPL.US
 </tbody>
 </table>
 
-## get\_quote
+### get\_quote
 
 `get_quote` retrieves real-time data for a given stock
 
@@ -2308,34 +2287,35 @@ t
 <tbody>
 <tr>
 <td style="text-align:right;">
+390.9
+</td>
+<td style="text-align:right;">
+396.99
+</td>
+<td style="text-align:right;">
+385.96
+</td>
+<td style="text-align:right;">
+395.96
+</td>
+<td style="text-align:right;">
 388.23
 </td>
-<td style="text-align:right;">
-389.02
-</td>
-<td style="text-align:right;">
-375.51
-</td>
-<td style="text-align:right;">
-379.36
-</td>
-<td style="text-align:right;">
-381.91
-</td>
 <td style="text-align:left;">
-2020-07-14 16:51:16
+2020-07-15 15:47:57
 </td>
 </tr>
 </tbody>
 </table>
 
-## get\_stock\_splits
+### get\_stock\_splits
 
 `get_stock_splits` retrieves stock splits for a given symbol
 
 #### Example
 
-Let’s say we want to get stock splits for Apple for a 30-day time period
+Let’s say we want to get stock splits for Apple for a 10-year time
+period
 
 ``` r
 from.date = '2010-01-01'
@@ -2383,3 +2363,512 @@ AAPL
 </table>
 
 Note: as-of 2020-07-14, this is not a very useful endpoint
+
+### get\_support\_resistance
+
+`get_support_resistance` retrieves support and resistance levels for a
+given company
+
+#### Example
+
+Let’s say we want to get support and resistance levels for Apple with a
+resolution of 1 minute
+
+``` r
+get_support_resistance(symbol = 'AAPL', 
+                       resolution = 1,
+                       api.key = api.key)
+```
+
+<table>
+<thead>
+<tr>
+<th style="text-align:right;">
+levels1
+</th>
+<th style="text-align:right;">
+levels2
+</th>
+<th style="text-align:right;">
+levels3
+</th>
+<th style="text-align:right;">
+levels4
+</th>
+<th style="text-align:right;">
+levels5
+</th>
+<th style="text-align:right;">
+levels6
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+387.91
+</td>
+<td style="text-align:right;">
+388.4
+</td>
+<td style="text-align:right;">
+389.38
+</td>
+<td style="text-align:right;">
+390.13
+</td>
+<td style="text-align:right;">
+391.68
+</td>
+<td style="text-align:right;">
+391.8299
+</td>
+</tr>
+</tbody>
+</table>
+
+### get\_aggregate\_indicators
+
+`get_aggregate_indicators` retrieves aggregate signal of multiple
+technical indicators (e.g. MACD, RSI, MA)
+
+#### Example
+
+Let’s say we want to get aggregate indicators for Apple with a
+resolution of 1 minute
+
+``` r
+get_aggregate_indicators(symbol = 'AAPL', 
+                       resolution = 1,
+                       api.key = api.key)
+```
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+count.buy
+</th>
+<th style="text-align:left;">
+count.neutral
+</th>
+<th style="text-align:left;">
+count.sell
+</th>
+<th style="text-align:left;">
+signal
+</th>
+<th style="text-align:left;">
+trend.adx
+</th>
+<th style="text-align:left;">
+trend.trending
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+neutral
+</td>
+<td style="text-align:left;">
+51.4063017421883
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+</tr>
+</tbody>
+</table>
+
+### get\_technical\_indicators
+
+`get_technical_indicators` retrieves technical indicator data for a
+given symbol
+
+#### Example: indicator only
+
+Let’s say that we want to get the exponential moving average data for
+Apple over the past 5 hours with a resolution of 1 minute
+
+``` r
+to.date <- Sys.time()
+from.date <- to.date - (5*3600)
+
+get_technical_indicators(symbol = 'AAPL', 
+                         indicator = 'ema',
+                         resolution = 1,
+                         from.date = from.date, 
+                         to.date = to.date, 
+                         api.key = api.key)
+```
+
+<table>
+<thead>
+<tr>
+<th style="text-align:right;">
+c
+</th>
+<th style="text-align:right;">
+ema
+</th>
+<th style="text-align:right;">
+h
+</th>
+<th style="text-align:right;">
+l
+</th>
+<th style="text-align:right;">
+o
+</th>
+<th style="text-align:left;">
+t
+</th>
+<th style="text-align:right;">
+v
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+389.5900
+</td>
+<td style="text-align:right;">
+0.0000
+</td>
+<td style="text-align:right;">
+389.63
+</td>
+<td style="text-align:right;">
+389.4033
+</td>
+<td style="text-align:right;">
+389.630
+</td>
+<td style="text-align:left;">
+2020-07-15 10:49:00
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+390.0100
+</td>
+<td style="text-align:right;">
+0.0000
+</td>
+<td style="text-align:right;">
+390.01
+</td>
+<td style="text-align:right;">
+389.5100
+</td>
+<td style="text-align:right;">
+389.570
+</td>
+<td style="text-align:left;">
+2020-07-15 10:50:00
+</td>
+<td style="text-align:right;">
+81457
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+390.0816
+</td>
+<td style="text-align:right;">
+389.8939
+</td>
+<td style="text-align:right;">
+390.19
+</td>
+<td style="text-align:right;">
+389.8500
+</td>
+<td style="text-align:right;">
+390.005
+</td>
+<td style="text-align:left;">
+2020-07-15 10:51:00
+</td>
+<td style="text-align:right;">
+68412
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+389.8300
+</td>
+<td style="text-align:right;">
+389.8619
+</td>
+<td style="text-align:right;">
+390.10
+</td>
+<td style="text-align:right;">
+389.6700
+</td>
+<td style="text-align:right;">
+390.070
+</td>
+<td style="text-align:left;">
+2020-07-15 10:52:00
+</td>
+<td style="text-align:right;">
+40915
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+389.6800
+</td>
+<td style="text-align:right;">
+389.7710
+</td>
+<td style="text-align:right;">
+389.91
+</td>
+<td style="text-align:right;">
+389.6800
+</td>
+<td style="text-align:right;">
+389.845
+</td>
+<td style="text-align:left;">
+2020-07-15 10:53:00
+</td>
+<td style="text-align:right;">
+32155
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+389.9400
+</td>
+<td style="text-align:right;">
+389.8555
+</td>
+<td style="text-align:right;">
+390.12
+</td>
+<td style="text-align:right;">
+389.6620
+</td>
+<td style="text-align:right;">
+389.710
+</td>
+<td style="text-align:left;">
+2020-07-15 10:54:00
+</td>
+<td style="text-align:right;">
+43182
+</td>
+</tr>
+</tbody>
+</table>
+
+#### Example: indicator plus parameters
+
+We can also use a list of indicator parameters written by finnhub staff,
+found
+[here](https://docs.google.com/spreadsheets/d/1ylUvKHVYN2E87WdwIza8ROaCpd48ggEl1k5i5SgA29k/edit?usp=sharing).
+To get the triple exponential moving average (T3), we’d enter
+
+``` r
+to.date <- Sys.time()
+from.date <- to.date - (5*3600)
+
+indicator.list <- list(
+  indicator = 't3',
+  timeperiod = 3,
+  seriestype = 'c'
+)
+
+get_technical_indicators(symbol = 'AAPL', 
+                         indicator.list = indicator.list,
+                         resolution = 1,
+                         from.date = from.date, 
+                         to.date = to.date, 
+                         api.key = api.key)
+```
+
+<table>
+<thead>
+<tr>
+<th style="text-align:right;">
+c
+</th>
+<th style="text-align:right;">
+h
+</th>
+<th style="text-align:right;">
+l
+</th>
+<th style="text-align:right;">
+o
+</th>
+<th style="text-align:left;">
+t
+</th>
+<th style="text-align:right;">
+t3
+</th>
+<th style="text-align:right;">
+v
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+389.5900
+</td>
+<td style="text-align:right;">
+389.63
+</td>
+<td style="text-align:right;">
+389.4033
+</td>
+<td style="text-align:right;">
+389.630
+</td>
+<td style="text-align:left;">
+2020-07-15 10:49:00
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+390.0100
+</td>
+<td style="text-align:right;">
+390.01
+</td>
+<td style="text-align:right;">
+389.5100
+</td>
+<td style="text-align:right;">
+389.570
+</td>
+<td style="text-align:left;">
+2020-07-15 10:50:00
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+81457
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+390.0816
+</td>
+<td style="text-align:right;">
+390.19
+</td>
+<td style="text-align:right;">
+389.8500
+</td>
+<td style="text-align:right;">
+390.005
+</td>
+<td style="text-align:left;">
+2020-07-15 10:51:00
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+68412
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+389.8300
+</td>
+<td style="text-align:right;">
+390.10
+</td>
+<td style="text-align:right;">
+389.6700
+</td>
+<td style="text-align:right;">
+390.070
+</td>
+<td style="text-align:left;">
+2020-07-15 10:52:00
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+40915
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+389.6800
+</td>
+<td style="text-align:right;">
+389.91
+</td>
+<td style="text-align:right;">
+389.6800
+</td>
+<td style="text-align:right;">
+389.845
+</td>
+<td style="text-align:left;">
+2020-07-15 10:53:00
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+32155
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+389.9400
+</td>
+<td style="text-align:right;">
+390.12
+</td>
+<td style="text-align:right;">
+389.6620
+</td>
+<td style="text-align:right;">
+389.710
+</td>
+<td style="text-align:left;">
+2020-07-15 10:54:00
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+43182
+</td>
+</tr>
+</tbody>
+</table>

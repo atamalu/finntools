@@ -12,6 +12,8 @@ knitr::opts_chunk$set(
   fig.path = "README-"
 )
 options(scipen = 999999)
+library(kableExtra)
+api.key = 'bs0e5lfrh5rbvs9fm450'
 ```
 
 # finntools
@@ -400,7 +402,7 @@ Sys.sleep(3)
 
 #### Example
 
-Let's say we want to get stock splits for Apple for a 30-day time period
+Let's say we want to get stock splits for Apple for a 10-year time period
 
 ```{r, eval = FALSE, echo = TRUE}
 from.date = '2010-01-01'
@@ -425,3 +427,122 @@ Sys.sleep(3)
 ```
 
 Note: as-of 2020-07-14, this is not a very useful endpoint
+
+### get_support_resistance
+
+`get_support_resistance` retrieves support and resistance levels for a given company
+
+#### Example
+
+Let's say we want to get support and resistance levels for Apple with a resolution of 1 minute
+
+```{r, eval = FALSE, echo = TRUE}
+get_support_resistance(symbol = 'AAPL', 
+                       resolution = 1,
+                       api.key = api.key)
+```
+```{r, eval = TRUE, echo = FALSE}
+get_support_resistance(symbol = 'AAPL', 
+                       resolution = 1,
+                       api.key = api.key) %>%
+  head() %>%
+  kable()
+Sys.sleep(3)
+```
+
+### get_aggregate_indicators
+
+`get_aggregate_indicators` retrieves aggregate signal of multiple technical indicators (e.g. MACD, RSI, MA)
+
+#### Example
+
+Let's say we want to get aggregate indicators for Apple with a resolution of 1 minute
+
+```{r, eval = FALSE, echo = TRUE}
+get_aggregate_indicators(symbol = 'AAPL', 
+                       resolution = 1,
+                       api.key = api.key)
+```
+```{r, eval = TRUE, echo = FALSE}
+get_aggregate_indicators(symbol = 'AAPL', 
+                       resolution = 1,
+                       api.key = api.key) %>%
+  head() %>%
+  kable()
+Sys.sleep(3)
+```
+
+### get_technical_indicators
+
+`get_technical_indicators` retrieves technical indicator data for a given symbol
+
+#### Example: indicator only
+
+Let's say that we want to get the exponential moving average data for Apple over the past 5 hours with a resolution of 1 minute
+
+```{r, eval = FALSE, echo = TRUE}
+to.date <- Sys.time()
+from.date <- to.date - (5*3600)
+
+get_technical_indicators(symbol = 'AAPL', 
+                         indicator = 'ema',
+                         resolution = 1,
+                         from.date = from.date, 
+                         to.date = to.date, 
+                         api.key = api.key)
+```
+```{r, eval = TRUE, echo = FALSE}
+to.date <- Sys.time()
+from.date <- to.date - (5*3600)
+
+get_technical_indicators(symbol = 'AAPL', 
+                         indicator = 'ema',
+                         resolution = 1,
+                         from.date = from.date, 
+                         to.date = to.date, 
+                         api.key = api.key) %>%
+  head() %>%
+  kable()
+Sys.sleep(3)
+```
+
+#### Example: indicator plus parameters
+
+We can also use a list of indicator parameters written by finnhub staff, found [here](https://docs.google.com/spreadsheets/d/1ylUvKHVYN2E87WdwIza8ROaCpd48ggEl1k5i5SgA29k/edit?usp=sharing). To get the triple exponential moving average (T3), we'd enter
+
+```{r, eval = FALSE, echo = TRUE, message = FALSE, warning = FALSE}
+to.date <- Sys.time()
+from.date <- to.date - (5*3600)
+
+indicator.list <- list(
+  indicator = 't3',
+  timeperiod = 3,
+  seriestype = 'c'
+)
+
+get_technical_indicators(symbol = 'AAPL', 
+                         indicator.list = indicator.list,
+                         resolution = 1,
+                         from.date = from.date, 
+                         to.date = to.date, 
+                         api.key = api.key)
+```
+```{r, eval = TRUE, echo = FALSE, message = FALSE, warning = FALSE}
+to.date <- Sys.time()
+from.date <- to.date - (5*3600)
+
+indicator.list <- list(
+  indicator = 't3',
+  timeperiod = 3,
+  seriestype = 'c'
+)
+
+get_technical_indicators(symbol = 'AAPL', 
+                         indicator.list = indicator.list,
+                         resolution = 1,
+                         from.date = from.date, 
+                         to.date = to.date, 
+                         api.key = api.key) %>%
+  head() %>%
+  kable()
+```
