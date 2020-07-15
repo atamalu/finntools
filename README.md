@@ -31,6 +31,12 @@ Functions will be updated over time. Current ones retrieve:
     on a given stock
 -   `get_quote` real-time data for a given stock
 -   `get_stock_splits` stock splits for a given symbol
+-   `get_support_resistance` support and resistance levels for 
+    a given company
+-   `get_aggregate_indicators` aggregate signal of multiple technical 
+    indicators (e.g. MACD, RSI, MA)
+-   `get_technical_indicators` technical indicator data for a 
+    given symbol
 
 #### market-based functions
 
