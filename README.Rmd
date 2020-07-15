@@ -12,8 +12,6 @@ knitr::opts_chunk$set(
   fig.path = "README-"
 )
 options(scipen = 999999)
-library(kableExtra)
-api.key = 'bs0e5lfrh5rbvs9fm450'
 ```
 
 # finntools
@@ -34,6 +32,9 @@ Finnhub.io offers a wide range of financial data at a price that the average inv
 * `get_pattern_recognition` results of a pattern recognition algorithm on a given stock
 * `get_quote` real-time data for a given stock
 * `get_stock_splits` stock splits for a given symbol
+* `get_support_resistance` support and resistance levels for a given company
+* `get_aggregate_indicators` aggregate signal of multiple technical indicators (e.g. MACD, RSI, MA)
+* `get_technical_indicators` technical indicator data for a given symbol
 
 #### market-based functions
 * `get_market_news` latest articles for overall market
